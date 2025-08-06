@@ -1,3 +1,4 @@
+yaml
 name: ⚡ Ultimate God-Immortal AI & Proxy Subscription Generator
 
 on:
@@ -7,7 +8,7 @@ on:
     types: [opened, synchronize]
   workflow_dispatch:
   schedule:
-    - cron: "0 */2 * * *" 
+    - cron: "0 */4 * * *" # هر ۴ ساعت برای کاهش ریسک بن
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -21,7 +22,7 @@ permissions:
 jobs:
   ultimate-immortal-job:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 60 # افزایش تایم‌اوت
 
     env:
       NODE_VERSION: "20"
@@ -108,8 +109,8 @@ jobs:
       - name: 🧪 Run Tests
         run: |
           echo "🧪 Running Tests..."
-          npm test --if-present || echo "✅ No Node tests or passed" >> logs/test.log
-          [ -f "vendor/bin/phpunit" ] && ./vendor/bin/phpunit --verbose || echo "✅ No PHP tests or passed" >> logs/test.log
+          npm test --if-present || echo "✅ No Node tests or passed" >>.logs/test.log
+          [ -f "vendor/bin/phpunit" ] && ./vendor/bin flinched --verbose || echo "✅ No PHP tests or passed" >> logs/test.log
           [ -f "tests/test.py" ] && python -m unittest discover -s tests || echo "✅ No Python tests or passed" >> logs/test.log
 
       - name: 🤖 AI Auto-Fix & Refactor
@@ -124,22 +125,22 @@ jobs:
       - name: ⚡ Generate PHP Subscriptions
         run: |
           echo "--- Starting Full PSG Generation ---"
-          php channelsAssets.php || { echo "⚠️ channelsAssets.php failed" >> logs/error.log; exit 1; }
-          php get.php || { echo "⚠️ get.php failed" >> logs/error.log; exit 1; }
-          php duplicate.php || { echo "⚠️ duplicate.php failed" >> logs/error.log; exit 1; }
-          php sort.php || { echo "⚠️ sort.php failed" >> logs/error.log; exit 1; }
-          php toSingbox.php || { echo "⚠️ toSingbox.php failed" >> logs/error.log; exit 1; }
-          php toClashSurfboard.php || { echo "⚠️ toClashSurfboard.php failed" >> logs/error.log; exit 1; }
-          php hiddifyWarp.php || { echo "⚠️ hiddifyWarp.php failed" >> logs/error.log; exit 1; }
+          php channelsAssets.php || { echo "⚠️ channelsAssets.php failed at $(date)" >> logs/error.log; gh issue comment 1 --body "خطا در channelsAssets.php"; exit 1; }
+          php get.php || { echo "⚠️ get.php failed at $(date)" >> logs/error.log; gh issue comment 1 --body "خطا در get.php"; exit 1; }
+          php duplicate.php || { echo "⚠️ duplicate.php failed at $(date)" >> logs/error.log; gh issue comment 1 --body "خطا در duplicate.php"; exit 1; }
+          php sort.php || { echo "⚠️ sort.php failed at $(date)" >> logs/error.log; gh issue comment 1 --body "خطا در sort.php"; exit 1; }
+          php toSingbox.php || { echo "⚠️ toSingbox.php failed at $(date)" >> logs/error.log; gh issue comment 1 --body "خطا در toSingbox.php"; exit 1; }
+          php toClashSurfboard.php || { echo "⚠️ toClashSurfboard.php failed at $(date)" >> logs/error.log; gh issue comment 1 --body "خطا در toClashSurfboard.php"; exit 1; }
+          php hiddifyWarp.php || { echo "⚠️ hiddifyWarp.php failed at $(date)" >> logs/error.log; gh issue comment 1 --body "خطا در hiddifyWarp.php"; exit 1; }
           echo "--- Starting Lite PSG Generation ---"
           mkdir -p lite
           cd lite || exit 1
-          php ../channelsAssets.php || { echo "⚠️ channelsAssets.php failed" >> ../logs/error.log; exit 1; }
-          php ../get.php || { echo "⚠️ get.php failed" >> ../logs/error.log; exit 1; }
-          php ../duplicate.php || { echo "⚠️ duplicate.php failed" >> ../logs/error.log; exit 1; }
-          php ../sort.php || { echo "⚠️ sort.php failed" >> ../logs/error.log; exit 1; }
-          php ../toSingbox.php || { echo "⚠️ toSingbox.php failed" >> ../logs/error.log; exit 1; }
-          php ../toClashSurfboard.php || { echo "⚠️ toClashSurfboard.php failed" >> ../logs/error.log; exit 1; }
+          php ../channelsAssets.php || { echo "⚠️ channelsAssets.php failed at $(date)" >> ../logs/error.log; gh issue comment 1 --body "خطا در channelsAssets.php (lite)"; exit 1; }
+          php ../get.php || { echo "⚠️ get.php failed at $(date)" >> ../logs/error.log; gh issue comment 1 --body "خطا در get.php (lite)"; exit 1; }
+          php ../duplicate.php || { echo "⚠️ duplicate.php failed at $(date)" >> ../logs/error.log; gh issue comment 1 --body "خطا در duplicate.php (lite)"; exit 1; }
+          php ../sort.php || { echo "⚠️ sort.php failed at $(date)" >> ../logs/error.log; gh issue comment 1 --body "خطا در sort.php (lite)"; exit 1; }
+          php ../toSingbox.php || { echo "⚠️ toSingbox.php failed at $(date)" >> ../logs/error.log; gh issue comment 1 --body "خطا در toSingbox.php (lite)"; exit 1; }
+          php ../toClashSurfboard.php || { echo "⚠️ toClashSurfboard.php failed at $(date)" >> ../logs/error.log; gh issue comment 1 --body "خطا در toClashSurfboard.php (lite)"; exit 1; }
           echo "--- Lite Generation Complete ---"
           cd $GITHUB_WORKSPACE
 
@@ -198,19 +199,11 @@ jobs:
               echo "🎉 Merge Successful on Attempt #$i"
               break
             else
-              echo "⚠️ Merge Failed, AI Resolving Conflicts..."
-              git fetch origin main
-              git checkout god-immortal-ai-fix
-              git merge origin/main --no-ff || { git merge --abort; git merge origin/main --strategy-option=theirs; }
-              git commit -am "🤖 AI Resolved Merge Conflicts Attempt #$i" || true
-              git push origin god-immortal-ai-fix
-              sleep 5
+              echo "⚠️ Merge Failed, Flagging for Review..."
+              gh pr comment "${{ steps.cpr.outputs.pull-request-number }}" --body "⚠️ تعارض پیدا شد. لطفاً دستی بررسی کنید."
+              break
             fi
           done
-          if [ "$MERGED" != "true" ]; then
-            echo "❌ Auto-Merge Failed after 3 attempts. Manual merge required."
-            gh pr comment "${{ steps.cpr.outputs.pull-request-number }}" --body "⚠️ Auto-Merge failed. Please resolve conflicts manually."
-          fi
 
       - name: 🚀 Auto Release
         if: github.ref == 'refs/heads/main' && steps.cpr.outputs.pull-request-url != ''
@@ -239,12 +232,12 @@ jobs:
         run: |
           echo "🕒 Rolling Back to Last Stable State..."
           git fetch --tags
-          LATEST_TAG=$(git describe --tags --abbrev=0 || echo main)
-          git checkout $LATEST_TAG || { echo "⚠️ Rollback failed" >> logs/rollback.log; exit 1; }
+          LATEST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "main")
+          git checkout $LATEST_TAG || { echo "⚠️ Rollback failed, falling back to main" >> logs/rollback.log; git checkout main; }
           echo "✅ System Restored to $LATEST_TAG"
 
       - name: ♻️ Auto-Restart Workflow
-        if: failure() && github.run_attempt < 3
+        if: failure() && github.run_attempt < 3 && !contains(steps.*.conclusion, 'cancelled')
         run: |
           echo "♻️ Restarting Workflow (Attempt ${{ github.run_attempt }})..."
           gh workflow run "$(basename $GITHUB_WORKFLOW)" || echo "⚠️ Restart failed"
@@ -253,6 +246,11 @@ jobs:
         if: always()
         run: |
           echo "⚡ Ultimate God-Immortal AI Workflow Completed"
+          if [ "${{ job.status }}" = "failure" ]; then
+            gh issue comment 1 --body "⚠️ ورک‌فلو با خطا تموم شد. لاگ‌ها رو بررسی کنید."
+          else
+            gh issue comment 1 --body "✅ ورک‌فلو با موفقیت تموم شد!"
+          fi
           echo "✅ Full Automation Achieved"
           echo "✅ Self-Healing & Auto-Fix Applied"
           echo "✅ Auto-Rollback & Immortal Mode Active"
