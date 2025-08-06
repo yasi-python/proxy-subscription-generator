@@ -1,0 +1,382 @@
+{
+    "dns": {
+        "independent_cache": true,
+        "rules": [
+            {
+                "domain": [
+                    "dns.google"
+                ],
+                "server": "dns-direct"
+            },
+            {
+                "outbound": [
+                    "any"
+                ],
+                "server": "dns-direct"
+            }
+        ],
+        "servers": [
+            {
+                "address": "tcp://1.1.1.1",
+                "address_resolver": "local-dns",
+                "detour": "proxy",
+                "tag": "proxy-dns"
+            },
+            {
+                "address": "local",
+                "detour": "direct",
+                "tag": "local-dns"
+            },
+            {
+                "address": "tcp://8.8.8.8",
+                "detour": "direct",
+                "tag": "direct-dns"
+            }
+        ]
+    },
+    "experimental": {
+        "cache_file": {
+            "enabled": true,
+            "path": "../cache/clash.db",
+            "store_fakeip": true
+        },
+        "clash_api": {
+            "external_controller": "127.0.0.1:9090",
+            "external_ui": "../files/yacd"
+        }
+    },
+    "inbounds": [
+        {
+            "domain_strategy": "",
+            "endpoint_independent_nat": true,
+            "inet4_address": [
+                "172.19.0.1/28"
+            ],
+            "mtu": 9000,
+            "sniff": true,
+            "sniff_override_destination": false,
+            "stack": "mixed",
+            "tag": "tun-in",
+            "type": "tun"
+        },
+        {
+            "domain_strategy": "",
+            "listen": "127.0.0.1",
+            "listen_port": 2080,
+            "sniff": true,
+            "sniff_override_destination": false,
+            "tag": "mixed-in",
+            "type": "mixed"
+        }
+    ],
+    "log": {
+        "level": "info"
+    },
+    "outbounds": [
+        {
+            "outbounds": [
+                "auto",
+                "direct",
+                "همکاری_ملی",
+                "جاویدشاه",
+                "KingRezaPahlavi",
+                "🇬🇧 GB | 🔒 SS | @ai_duet [8]",
+                "🇮🇷 IR | 🔒 SS | @configscenter [1]",
+                "🇩🇪 DE | 🔒 SS | @freakconfig [15]",
+                "🇺🇸 US | 🔒 SS | @freeconfigsplus [19]",
+                "🇬🇧 GB | 🔒 SS | @imhdiyvp [9]",
+                "🇳🇱 NL | 🔒 SS | @ip_cf_config [15]",
+                "🇬🇧 GB | 🔒 SS | @lranonline_new [5]",
+                "🇨🇳 CN | 🔒 SS | @mftizi [18]",
+                "🇬🇧 GB | 🔒 SS | @nationalproxytelegram [1]",
+                "🇬🇧 GB | 🔒 SS | @nationalproxytelegram [2]",
+                "🇬🇧 GB | 🔒 SS | @ntgreenplus [1]",
+                "🇺🇸 US | 🔒 SS | @proxy48 [14]",
+                "❔ XX | 🔒 SS | @proxy_confiingir [2]",
+                "🇬🇧 GB | 🔒 SS | @prroxyng [2]",
+                "🇬🇧 GB | 🔒 SS | @serverv2ray00 [20]",
+                "🇬🇧 GB | 🔒 SS | @v2rayang201 [8]",
+                "🇯🇵 JP | 🔒 SS | @vpn451 [16]"
+            ],
+            "tag": "proxy",
+            "type": "selector"
+        },
+        {
+            "interval": "10m",
+            "outbounds": [
+                "همکاری_ملی",
+                "جاویدشاه",
+                "KingRezaPahlavi",
+                "🇬🇧 GB | 🔒 SS | @ai_duet [8]",
+                "🇮🇷 IR | 🔒 SS | @configscenter [1]",
+                "🇩🇪 DE | 🔒 SS | @freakconfig [15]",
+                "🇺🇸 US | 🔒 SS | @freeconfigsplus [19]",
+                "🇬🇧 GB | 🔒 SS | @imhdiyvp [9]",
+                "🇳🇱 NL | 🔒 SS | @ip_cf_config [15]",
+                "🇬🇧 GB | 🔒 SS | @lranonline_new [5]",
+                "🇨🇳 CN | 🔒 SS | @mftizi [18]",
+                "🇬🇧 GB | 🔒 SS | @nationalproxytelegram [1]",
+                "🇬🇧 GB | 🔒 SS | @nationalproxytelegram [2]",
+                "🇬🇧 GB | 🔒 SS | @ntgreenplus [1]",
+                "🇺🇸 US | 🔒 SS | @proxy48 [14]",
+                "❔ XX | 🔒 SS | @proxy_confiingir [2]",
+                "🇬🇧 GB | 🔒 SS | @prroxyng [2]",
+                "🇬🇧 GB | 🔒 SS | @serverv2ray00 [20]",
+                "🇬🇧 GB | 🔒 SS | @v2rayang201 [8]",
+                "🇯🇵 JP | 🔒 SS | @vpn451 [16]"
+            ],
+            "tag": "auto",
+            "tolerance": 50,
+            "type": "urltest",
+            "url": "http://www.gstatic.com/generate_204"
+        },
+        {
+            "tag": "direct",
+            "type": "direct"
+        },
+        {
+            "tag": "bypass",
+            "type": "direct"
+        },
+        {
+            "tag": "همکاری_ملی",
+            "type": "vless",
+            "server": "127.0.0.1",
+            "server_port": 443,
+            "uuid": "00000000-0000-0000-0000-000000000000",
+            "flow": "",
+            "packet_encoding": "xudp",
+            "tls": {
+                "enabled": true,
+                "server_name": "127.0.0.1",
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "/",
+                "headers": {
+                    "Host": "127.0.0.1"
+                }
+            }
+        },
+        {
+            "tag": "جاویدشاه",
+            "type": "vless",
+            "server": "127.0.0.1",
+            "server_port": 443,
+            "uuid": "00000000-0000-0000-0000-000000000000",
+            "flow": "",
+            "packet_encoding": "xudp",
+            "tls": {
+                "enabled": true,
+                "server_name": "127.0.0.1",
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "/",
+                "headers": {
+                    "Host": "127.0.0.1"
+                }
+            }
+        },
+        {
+            "tag": "KingRezaPahlavi",
+            "type": "vless",
+            "server": "127.0.0.1",
+            "server_port": 443,
+            "uuid": "00000000-0000-0000-0000-000000000000",
+            "flow": "",
+            "packet_encoding": "xudp",
+            "tls": {
+                "enabled": true,
+                "server_name": "127.0.0.1",
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "/",
+                "headers": {
+                    "Host": "127.0.0.1"
+                }
+            }
+        },
+        {
+            "tag": "🇬🇧 GB | 🔒 SS | @ai_duet [8]",
+            "type": "shadowsocks",
+            "server": "Peweza3.digipedia.shop",
+            "server_port": 443,
+            "method": "chacha20-ietf-poly1305",
+            "password": "mps3FwmDjLrWaOVg"
+        },
+        {
+            "tag": "🇮🇷 IR | 🔒 SS | @configscenter [1]",
+            "type": "shadowsocks",
+            "server": "thr.npvnot.com",
+            "server_port": 10107,
+            "method": "aes-256-gcm",
+            "password": "M2E4ZGY2ZjI5MzU2ODAxMjEwYzgyNzQ0MGM5NGUy"
+        },
+        {
+            "tag": "🇩🇪 DE | 🔒 SS | @freakconfig [15]",
+            "type": "shadowsocks",
+            "server": "h110vpnde2.outlinekeys.net",
+            "server_port": 53122,
+            "method": "chacha20-ietf-poly1305",
+            "password": "rWKE1UyQidbLmYCLvFNawV"
+        },
+        {
+            "tag": "🇺🇸 US | 🔒 SS | @freeconfigsplus [19]",
+            "type": "shadowsocks",
+            "server": "hackney-latest-strike.freesocks.work",
+            "server_port": 443,
+            "method": "chacha20-ietf-poly1305",
+            "password": "XUMTygEM1jVYIvysXKqA5T"
+        },
+        {
+            "tag": "🇬🇧 GB | 🔒 SS | @imhdiyvp [9]",
+            "type": "shadowsocks",
+            "server": "series-a2-mec.varzesh360.co",
+            "server_port": 443,
+            "method": "chacha20-ietf-poly1305",
+            "password": "u17T3BvpYaaiuW2c"
+        },
+        {
+            "tag": "🇳🇱 NL | 🔒 SS | @ip_cf_config [15]",
+            "type": "shadowsocks",
+            "server": "beesyar.org",
+            "server_port": 8080,
+            "method": "chacha20-ietf-poly1305",
+            "password": "4a2rfixophdjffa8KVA4Aa"
+        },
+        {
+            "tag": "🇬🇧 GB | 🔒 SS | @lranonline_new [5]",
+            "type": "shadowsocks",
+            "server": "series-a2-mec.samanehha.co",
+            "server_port": 443,
+            "method": "chacha20-ietf-poly1305",
+            "password": "u17T3BvpYaaiuW2c"
+        },
+        {
+            "tag": "🇨🇳 CN | 🔒 SS | @mftizi [18]",
+            "type": "shadowsocks",
+            "server": "hk01.x.quickcht3.club",
+            "server_port": 52611,
+            "method": "chacha20-ietf-poly1305",
+            "password": "2be0c954-4291-45ea-b47d-ca713180550b"
+        },
+        {
+            "tag": "🇬🇧 GB | 🔒 SS | @nationalproxytelegram [1]",
+            "type": "shadowsocks",
+            "server": "series-a2.varzesh360.co",
+            "server_port": 443,
+            "method": "chacha20-ietf-poly1305",
+            "password": "mps3FwmDjLrWaOVg"
+        },
+        {
+            "tag": "🇬🇧 GB | 🔒 SS | @nationalproxytelegram [2]",
+            "type": "shadowsocks",
+            "server": "series-a2.samanehha.co",
+            "server_port": 443,
+            "method": "chacha20-ietf-poly1305",
+            "password": "mps3FwmDjLrWaOVg"
+        },
+        {
+            "tag": "🇬🇧 GB | 🔒 SS | @ntgreenplus [1]",
+            "type": "shadowsocks",
+            "server": "admin.c2.webramz.co",
+            "server_port": 443,
+            "method": "chacha20-ietf-poly1305",
+            "password": "WstuSnlu4ieA9M0L"
+        },
+        {
+            "tag": "🇺🇸 US | 🔒 SS | @proxy48 [14]",
+            "type": "shadowsocks",
+            "server": "api.namasha.co",
+            "server_port": 443,
+            "method": "chacha20-ietf-poly1305",
+            "password": "u17T3BvpYaaiuW2c"
+        },
+        {
+            "tag": "❔ XX | 🔒 SS | @proxy_confiingir [2]",
+            "type": "shadowsocks",
+            "server": "ak1857.www.outline.network.fr8678825324247b8176d59f83c30bd94d23d2e3ac5cd4a743bkwqeikvdyufr.cyou",
+            "server_port": 443,
+            "method": "chacha20-ietf-poly1305",
+            "password": "u17T3BvpYaaiuW2c"
+        },
+        {
+            "tag": "🇬🇧 GB | 🔒 SS | @prroxyng [2]",
+            "type": "shadowsocks",
+            "server": "admin.c4.webramz.co",
+            "server_port": 443,
+            "method": "chacha20-ietf-poly1305",
+            "password": "69MUii7VDwMqh7Hz"
+        },
+        {
+            "tag": "🇬🇧 GB | 🔒 SS | @serverv2ray00 [20]",
+            "type": "shadowsocks",
+            "server": "series-a2-me.samanehha.co",
+            "server_port": 443,
+            "method": "chacha20-ietf-poly1305",
+            "password": "Bog0ELmMM9DSxDdQ"
+        },
+        {
+            "tag": "🇬🇧 GB | 🔒 SS | @v2rayang201 [8]",
+            "type": "shadowsocks",
+            "server": "series-a1.samanehha.co",
+            "server_port": 443,
+            "method": "chacha20-ietf-poly1305",
+            "password": "W74XFALLLuw6m5IA"
+        },
+        {
+            "tag": "🇯🇵 JP | 🔒 SS | @vpn451 [16]",
+            "type": "shadowsocks",
+            "server": "sakura.outlinekeys.net",
+            "server_port": 1235,
+            "method": "chacha20-ietf-poly1305",
+            "password": "sINSpdNYGUfLMzsoLD3W5D"
+        }
+    ],
+    "route": {
+        "auto_detect_interface": true,
+        "rule_set": [],
+        "rules": [
+            {
+                "action": "hijack-dns",
+                "port": [
+                    53
+                ]
+            },
+            {
+                "action": "hijack-dns",
+                "protocol": [
+                    "dns"
+                ]
+            },
+            {
+                "action": "reject",
+                "ip_cidr": [
+                    "224.0.0.0/3",
+                    "ff00::/8"
+                ],
+                "source_ip_cidr": [
+                    "224.0.0.0/3",
+                    "ff00::/8"
+                ]
+            }
+        ]
+    }
+}

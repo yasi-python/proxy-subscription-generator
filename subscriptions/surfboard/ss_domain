@@ -1,0 +1,63 @@
+#!MANAGED-CONFIG https://raw.githubusercontent.com/itsyebekhe/PSG/main/subscriptions/surfboard/ss_domain interval=3600 strict=false
+
+[General]
+loglevel = notify
+skip-proxy = 127.0.0.1, 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, 100.64.0.0/10, localhost, *.local
+ipv6 = true
+dns-server = system, 223.5.5.5
+enhanced-mode-by-rule = true
+
+[Proxy]
+DIRECT = direct
+🇬🇧 GB | 🔒 SS | @ai_duet [8] = ss, Peweza3.digipedia.shop, 443, encrypt-method = chacha20-ietf-poly1305, password = mps3FwmDjLrWaOVg
+🇬🇧 GB | 🔒 SS | @canfing_vpn [7] = ss, series-a2-mec.varzesh360.co, 443, encrypt-method = chacha20-ietf-poly1305, password = u17T3BvpYaaiuW2c
+🇺🇸 US | 🔒 SS | @configfa [8] = ss, us.vmagnum.win, 57456, encrypt-method = chacha20-ietf-poly1305, password = 360e21d21977dc11
+🇺🇸 US | 🔒 SS | @configfa [10] = ss, hackney-latest-strike.freesocks.work, 443, encrypt-method = chacha20-ietf-poly1305, password = XUMTygEM1jVYIvysXKqA5T
+🇮🇷 IR | 🔒 SS | @configscenter [1] = ss, thr.npvnot.com, 10107, encrypt-method = aes-256-gcm, password = M2E4ZGY2ZjI5MzU2ODAxMjEwYzgyNzQ0MGM5NGUy
+❔ XX | 🔒 SS | @darkma3ter24 [1] = ss, beedoost.org, 8080, encrypt-method = chacha20-ietf-poly1305, password = a8bt9fY0QsLS6eLnXUe0Ym
+🇬🇧 GB | 🔒 SS | @fastkanfig [2] = ss, join.vpncustomize.vpncustomize.reziazaran.ir, 443, encrypt-method = chacha20-ietf-poly1305, password = Bog0ELmMM9DSxDdQ
+🇬🇧 GB | 🔒 SS | @fastkanfig [3] = ss, series-a2.samanehha.co, 443, encrypt-method = chacha20-ietf-poly1305, password = mps3FwmDjLrWaOVg
+🇬🇧 GB | 🔒 SS | @filtershekan_channel [5] = ss, admin.c4.webramz.co, 443, encrypt-method = chacha20-ietf-poly1305, password = 69MUii7VDwMqh7Hz
+🇩🇪 DE | 🔒 SS | @freakconfig [15] = ss, h110vpnde2.outlinekeys.net, 53122, encrypt-method = chacha20-ietf-poly1305, password = rWKE1UyQidbLmYCLvFNawV
+🇨🇦 CA | 🔒 SS | @free4allvpn [4] = ss, delta.yangon.ca, 8443, encrypt-method = chacha20-ietf-poly1305, password = 3qbOlPe0SbNGznFQmGt6FA
+🇩🇪 DE | 🔒 SS | @ip_cf_config [3] = ss, fin.outlinebot1.ru, 5904, encrypt-method = chacha20-ietf-poly1305, password = 5TZnwPb23pQS39lIucspJw
+🇸🇪 SE | 🔒 SS | @ip_cf_config [10] = ss, azure-sto.edgeservers.org, 48172, encrypt-method = chacha20-ietf-poly1305, password = 51yloQC8D9w1Wae7FHtI65
+🇮🇷 IR | 🔒 SS | @jeyksatan [7] = ss, 37050813702269272654038283817908.international-ixp.com, 11312, encrypt-method = aes-256-gcm, password = 37fe3228-53ab-9453-19d9-e779456ef09a
+🇬🇧 GB | 🔒 SS | @jeyksatan [8] = ss, series-a2.varzesh360.co, 443, encrypt-method = chacha20-ietf-poly1305, password = mps3FwmDjLrWaOVg
+🇬🇧 GB | 🔒 SS | @kafing_2 [4] = ss, freakconfig13.felafel.org, 443, encrypt-method = chacha20-ietf-poly1305, password = 1xO2cqPazqjGfCfd
+🇬🇧 GB | 🔒 SS | @lranonline_new [2] = ss, admin.c2.webramz.co, 443, encrypt-method = chacha20-ietf-poly1305, password = WstuSnlu4ieA9M0L
+🇬🇧 GB | 🔒 SS | @lranonline_new [5] = ss, series-a2-mec.samanehha.co, 443, encrypt-method = chacha20-ietf-poly1305, password = u17T3BvpYaaiuW2c
+🇺🇸 US | 🔒 SS | @megavpn_link [5] = ss, api.namasha.co, 443, encrypt-method = chacha20-ietf-poly1305, password = u17T3BvpYaaiuW2c
+🇨🇳 CN | 🔒 SS | @mftizi [18] = ss, hk01.x.quickcht3.club, 52611, encrypt-method = chacha20-ietf-poly1305, password = 2be0c954-4291-45ea-b47d-ca713180550b
+❔ XX | 🔒 SS | @mr_vpn123 [2] = ss, freakconfig123.usecharge.ir, 443, encrypt-method = chacha20-ietf-poly1305, password = W74XFALLLuw6m5IA
+❔ XX | 🔒 SS | @mt_proxy [5] = ss, www2.broadalx.cfd, 40934, encrypt-method = chacha20-ietf-poly1305, password = jxfYgVB87GkSQR4U7Ce6rNBkP5URFYJfH1bFNo84pr5fWXMYCkcPAUYBCrAz7NBkpixeHgdzYYYW7jVyo9LpwSakvQ7nuKj1
+🇬🇧 GB | 🔒 SS | @nepo_v2ray [14] = ss, series-a2-me.samanehha.co, 443, encrypt-method = chacha20-ietf-poly1305, password = Bog0ELmMM9DSxDdQ
+❔ XX | 🔒 SS | @proxy_confiingir [2] = ss, ak1857.www.outline.network.fr8678825324247b8176d59f83c30bd94d23d2e3ac5cd4a743bkwqeikvdyufr.cyou, 443, encrypt-method = chacha20-ietf-poly1305, password = u17T3BvpYaaiuW2c
+❔ XX | 🔒 SS | @public504 [8] = ss, seoul.dodohee.info, 20976, encrypt-method = chacha20-ietf-poly1305, password = Gy1ddTFQcNrkyJMaoDl1da
+❔ XX | 🔒 SS | @public504 [9] = ss, india.dodohee.info, 6980, encrypt-method = chacha20-ietf-poly1305, password = 4e9ufa1a2jeANAVebF0wqN
+❔ XX | 🔒 SS | @red2ray [1] = ss, www.outline.network.ak1909.fr8678825324247b8176d59f83c30bd94d23d2e3ac5cd4a743bkwqeikvdyufr.cyou, 443, encrypt-method = chacha20-ietf-poly1305, password = mps3FwmDjLrWaOVg
+🇬🇧 GB | 🔒 SS | @serverv2ray00 [14] = ss, account-mec.emofid.co, 443, encrypt-method = chacha20-ietf-poly1305, password = 7ivrGEHY88sQk3DP
+❔ XX | 🔒 SS | @shadowsockskeys [5] = ss, host.phonygilson.icu, 49072, encrypt-method = chacha20-ietf-poly1305, password = CH5xv3A7JA6sLKzEhLpm81Y4GHi9nUiHWxtYU4eMLabhpX8DrCaveoqhTTNVkZdHe3ocQFx843hnCNpRdPeibgvM1mYNPRuM
+🇦🇪 AE | 🔒 SS | @shadowsockskeys [10] = ss, ae-1.stunnel.cc, 8444, encrypt-method = chacha20-ietf-poly1305, password = tunnel-astrovpn_official_ae
+🇬🇧 GB | 🔒 SS | @torang_vpn [4] = ss, series-a1.samanehha.co, 443, encrypt-method = chacha20-ietf-poly1305, password = W74XFALLLuw6m5IA
+🇬🇧 GB | 🔒 SS | @v2rayngalpha [2] = ss, series-a2-me.varzesh360.co, 443, encrypt-method = chacha20-ietf-poly1305, password = Bog0ELmMM9DSxDdQ
+🇳🇱 NL | 🔒 SS | @v2rayngrit [10] = ss, switcher-nick-croquet.freesocks.work, 443, encrypt-method = chacha20-ietf-poly1305, password = 9tqhMdIrTkgQ46PvhyAtMH
+❔ XX | 🔒 SS | @v2ryngfree [2] = ss, fast_2ray_telchannelll.fast2rayy.eu.org, 443, encrypt-method = chacha20-ietf-poly1305, password = Bog0ELmMM9DSxDdQ
+❔ XX | 🔒 SS | @v_2ray1 [7] = ss, fast_2ray_telchannelll2.fast2rayy.eu.org, 443, encrypt-method = chacha20-ietf-poly1305, password = Bog0ELmMM9DSxDdQ
+🇬🇧 GB | 🔒 SS | @v_2ray1 [8] = ss, series-a2-me.samanehha.co, 443, encrypt-method = chacha20-ietf-poly1305, password = 2LVVFxxHJSBMdGdl
+🇺🇸 US | 🔒 SS | @vpn451 [3] = ss, fox-usa.outlinekeys.net, 34868, encrypt-method = chacha20-ietf-poly1305, password = hKz1zPVzgdJ2mFXEqLuQnD
+🇯🇵 JP | 🔒 SS | @vpn451 [8] = ss, sakura.outlinekeys.net, 1235, encrypt-method = chacha20-ietf-poly1305, password = FGHwtC6cjw1zSSiRbEg5T4
+🇺🇸 US | 🔒 SS | @vpn451 [9] = ss, fox-usa.outlinekeys.net, 34868, encrypt-method = chacha20-ietf-poly1305, password = TiiaduS9VbEHgfkRugj3xO
+🇺🇸 US | 🔒 SS | @vpn451 [12] = ss, fox-usa.outlinekeys.net, 34868, encrypt-method = chacha20-ietf-poly1305, password = To8uQIZua71xAA3JMbUWEi
+🇳🇱 NL | 🔒 SS | @vpn451 [14] = ss, macintosh.outlinekeys.net, 19609, encrypt-method = chacha20-ietf-poly1305, password = jg8euTSXrw0YpeUmUEzmZI
+🇯🇵 JP | 🔒 SS | @vpn451 [16] = ss, sakura.outlinekeys.net, 1235, encrypt-method = chacha20-ietf-poly1305, password = sINSpdNYGUfLMzsoLD3W5D
+❔ XX | 🔒 SS | @vpn_meliii [1] = ss, 2FreakConfig.usecharge.ir, 443, encrypt-method = chacha20-ietf-poly1305, password = W74XFALLLuw6m5IA
+
+[Proxy Group]
+PSG-MANUAL = select, PSG-AUTO, PSG-FALLBACK, 🇬🇧 GB | 🔒 SS | @ai_duet [8], 🇬🇧 GB | 🔒 SS | @canfing_vpn [7], 🇺🇸 US | 🔒 SS | @configfa [8], 🇺🇸 US | 🔒 SS | @configfa [10], 🇮🇷 IR | 🔒 SS | @configscenter [1], ❔ XX | 🔒 SS | @darkma3ter24 [1], 🇬🇧 GB | 🔒 SS | @fastkanfig [2], 🇬🇧 GB | 🔒 SS | @fastkanfig [3], 🇬🇧 GB | 🔒 SS | @filtershekan_channel [5], 🇩🇪 DE | 🔒 SS | @freakconfig [15], 🇨🇦 CA | 🔒 SS | @free4allvpn [4], 🇩🇪 DE | 🔒 SS | @ip_cf_config [3], 🇸🇪 SE | 🔒 SS | @ip_cf_config [10], 🇮🇷 IR | 🔒 SS | @jeyksatan [7], 🇬🇧 GB | 🔒 SS | @jeyksatan [8], 🇬🇧 GB | 🔒 SS | @kafing_2 [4], 🇬🇧 GB | 🔒 SS | @lranonline_new [2], 🇬🇧 GB | 🔒 SS | @lranonline_new [5], 🇺🇸 US | 🔒 SS | @megavpn_link [5], 🇨🇳 CN | 🔒 SS | @mftizi [18], ❔ XX | 🔒 SS | @mr_vpn123 [2], ❔ XX | 🔒 SS | @mt_proxy [5], 🇬🇧 GB | 🔒 SS | @nepo_v2ray [14], ❔ XX | 🔒 SS | @proxy_confiingir [2], ❔ XX | 🔒 SS | @public504 [8], ❔ XX | 🔒 SS | @public504 [9], ❔ XX | 🔒 SS | @red2ray [1], 🇬🇧 GB | 🔒 SS | @serverv2ray00 [14], ❔ XX | 🔒 SS | @shadowsockskeys [5], 🇦🇪 AE | 🔒 SS | @shadowsockskeys [10], 🇬🇧 GB | 🔒 SS | @torang_vpn [4], 🇬🇧 GB | 🔒 SS | @v2rayngalpha [2], 🇳🇱 NL | 🔒 SS | @v2rayngrit [10], ❔ XX | 🔒 SS | @v2ryngfree [2], ❔ XX | 🔒 SS | @v_2ray1 [7], 🇬🇧 GB | 🔒 SS | @v_2ray1 [8], 🇺🇸 US | 🔒 SS | @vpn451 [3], 🇯🇵 JP | 🔒 SS | @vpn451 [8], 🇺🇸 US | 🔒 SS | @vpn451 [9], 🇺🇸 US | 🔒 SS | @vpn451 [12], 🇳🇱 NL | 🔒 SS | @vpn451 [14], 🇯🇵 JP | 🔒 SS | @vpn451 [16], ❔ XX | 🔒 SS | @vpn_meliii [1]
+PSG-AUTO = url-test, 🇬🇧 GB | 🔒 SS | @ai_duet [8], 🇬🇧 GB | 🔒 SS | @canfing_vpn [7], 🇺🇸 US | 🔒 SS | @configfa [8], 🇺🇸 US | 🔒 SS | @configfa [10], 🇮🇷 IR | 🔒 SS | @configscenter [1], ❔ XX | 🔒 SS | @darkma3ter24 [1], 🇬🇧 GB | 🔒 SS | @fastkanfig [2], 🇬🇧 GB | 🔒 SS | @fastkanfig [3], 🇬🇧 GB | 🔒 SS | @filtershekan_channel [5], 🇩🇪 DE | 🔒 SS | @freakconfig [15], 🇨🇦 CA | 🔒 SS | @free4allvpn [4], 🇩🇪 DE | 🔒 SS | @ip_cf_config [3], 🇸🇪 SE | 🔒 SS | @ip_cf_config [10], 🇮🇷 IR | 🔒 SS | @jeyksatan [7], 🇬🇧 GB | 🔒 SS | @jeyksatan [8], 🇬🇧 GB | 🔒 SS | @kafing_2 [4], 🇬🇧 GB | 🔒 SS | @lranonline_new [2], 🇬🇧 GB | 🔒 SS | @lranonline_new [5], 🇺🇸 US | 🔒 SS | @megavpn_link [5], 🇨🇳 CN | 🔒 SS | @mftizi [18], ❔ XX | 🔒 SS | @mr_vpn123 [2], ❔ XX | 🔒 SS | @mt_proxy [5], 🇬🇧 GB | 🔒 SS | @nepo_v2ray [14], ❔ XX | 🔒 SS | @proxy_confiingir [2], ❔ XX | 🔒 SS | @public504 [8], ❔ XX | 🔒 SS | @public504 [9], ❔ XX | 🔒 SS | @red2ray [1], 🇬🇧 GB | 🔒 SS | @serverv2ray00 [14], ❔ XX | 🔒 SS | @shadowsockskeys [5], 🇦🇪 AE | 🔒 SS | @shadowsockskeys [10], 🇬🇧 GB | 🔒 SS | @torang_vpn [4], 🇬🇧 GB | 🔒 SS | @v2rayngalpha [2], 🇳🇱 NL | 🔒 SS | @v2rayngrit [10], ❔ XX | 🔒 SS | @v2ryngfree [2], ❔ XX | 🔒 SS | @v_2ray1 [7], 🇬🇧 GB | 🔒 SS | @v_2ray1 [8], 🇺🇸 US | 🔒 SS | @vpn451 [3], 🇯🇵 JP | 🔒 SS | @vpn451 [8], 🇺🇸 US | 🔒 SS | @vpn451 [9], 🇺🇸 US | 🔒 SS | @vpn451 [12], 🇳🇱 NL | 🔒 SS | @vpn451 [14], 🇯🇵 JP | 🔒 SS | @vpn451 [16], ❔ XX | 🔒 SS | @vpn_meliii [1]
+PSG-FALLBACK = fallback, 🇬🇧 GB | 🔒 SS | @ai_duet [8], 🇬🇧 GB | 🔒 SS | @canfing_vpn [7], 🇺🇸 US | 🔒 SS | @configfa [8], 🇺🇸 US | 🔒 SS | @configfa [10], 🇮🇷 IR | 🔒 SS | @configscenter [1], ❔ XX | 🔒 SS | @darkma3ter24 [1], 🇬🇧 GB | 🔒 SS | @fastkanfig [2], 🇬🇧 GB | 🔒 SS | @fastkanfig [3], 🇬🇧 GB | 🔒 SS | @filtershekan_channel [5], 🇩🇪 DE | 🔒 SS | @freakconfig [15], 🇨🇦 CA | 🔒 SS | @free4allvpn [4], 🇩🇪 DE | 🔒 SS | @ip_cf_config [3], 🇸🇪 SE | 🔒 SS | @ip_cf_config [10], 🇮🇷 IR | 🔒 SS | @jeyksatan [7], 🇬🇧 GB | 🔒 SS | @jeyksatan [8], 🇬🇧 GB | 🔒 SS | @kafing_2 [4], 🇬🇧 GB | 🔒 SS | @lranonline_new [2], 🇬🇧 GB | 🔒 SS | @lranonline_new [5], 🇺🇸 US | 🔒 SS | @megavpn_link [5], 🇨🇳 CN | 🔒 SS | @mftizi [18], ❔ XX | 🔒 SS | @mr_vpn123 [2], ❔ XX | 🔒 SS | @mt_proxy [5], 🇬🇧 GB | 🔒 SS | @nepo_v2ray [14], ❔ XX | 🔒 SS | @proxy_confiingir [2], ❔ XX | 🔒 SS | @public504 [8], ❔ XX | 🔒 SS | @public504 [9], ❔ XX | 🔒 SS | @red2ray [1], 🇬🇧 GB | 🔒 SS | @serverv2ray00 [14], ❔ XX | 🔒 SS | @shadowsockskeys [5], 🇦🇪 AE | 🔒 SS | @shadowsockskeys [10], 🇬🇧 GB | 🔒 SS | @torang_vpn [4], 🇬🇧 GB | 🔒 SS | @v2rayngalpha [2], 🇳🇱 NL | 🔒 SS | @v2rayngrit [10], ❔ XX | 🔒 SS | @v2ryngfree [2], ❔ XX | 🔒 SS | @v_2ray1 [7], 🇬🇧 GB | 🔒 SS | @v_2ray1 [8], 🇺🇸 US | 🔒 SS | @vpn451 [3], 🇯🇵 JP | 🔒 SS | @vpn451 [8], 🇺🇸 US | 🔒 SS | @vpn451 [9], 🇺🇸 US | 🔒 SS | @vpn451 [12], 🇳🇱 NL | 🔒 SS | @vpn451 [14], 🇯🇵 JP | 🔒 SS | @vpn451 [16], ❔ XX | 🔒 SS | @vpn_meliii [1]
+
+[Rule]
+GEOIP,IR,DIRECT
+FINAL,PSG-MANUAL

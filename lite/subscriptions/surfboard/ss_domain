@@ -1,0 +1,37 @@
+#!MANAGED-CONFIG https://raw.githubusercontent.com/itsyebekhe/PSG/main/subscriptions/surfboard/ss_domain interval=3600 strict=false
+
+[General]
+loglevel = notify
+skip-proxy = 127.0.0.1, 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, 100.64.0.0/10, localhost, *.local
+ipv6 = true
+dns-server = system, 223.5.5.5
+enhanced-mode-by-rule = true
+
+[Proxy]
+DIRECT = direct
+🇬🇧 GB | 🔒 SS | @ai_duet [8] = ss, Peweza3.digipedia.shop, 443, encrypt-method = chacha20-ietf-poly1305, password = mps3FwmDjLrWaOVg
+🇮🇷 IR | 🔒 SS | @configscenter [1] = ss, thr.npvnot.com, 10107, encrypt-method = aes-256-gcm, password = M2E4ZGY2ZjI5MzU2ODAxMjEwYzgyNzQ0MGM5NGUy
+🇩🇪 DE | 🔒 SS | @freakconfig [15] = ss, h110vpnde2.outlinekeys.net, 53122, encrypt-method = chacha20-ietf-poly1305, password = rWKE1UyQidbLmYCLvFNawV
+🇺🇸 US | 🔒 SS | @freeconfigsplus [19] = ss, hackney-latest-strike.freesocks.work, 443, encrypt-method = chacha20-ietf-poly1305, password = XUMTygEM1jVYIvysXKqA5T
+🇬🇧 GB | 🔒 SS | @imhdiyvp [9] = ss, series-a2-mec.varzesh360.co, 443, encrypt-method = chacha20-ietf-poly1305, password = u17T3BvpYaaiuW2c
+🇳🇱 NL | 🔒 SS | @ip_cf_config [15] = ss, beesyar.org, 8080, encrypt-method = chacha20-ietf-poly1305, password = 4a2rfixophdjffa8KVA4Aa
+🇬🇧 GB | 🔒 SS | @lranonline_new [5] = ss, series-a2-mec.samanehha.co, 443, encrypt-method = chacha20-ietf-poly1305, password = u17T3BvpYaaiuW2c
+🇨🇳 CN | 🔒 SS | @mftizi [18] = ss, hk01.x.quickcht3.club, 52611, encrypt-method = chacha20-ietf-poly1305, password = 2be0c954-4291-45ea-b47d-ca713180550b
+🇬🇧 GB | 🔒 SS | @nationalproxytelegram [1] = ss, series-a2.varzesh360.co, 443, encrypt-method = chacha20-ietf-poly1305, password = mps3FwmDjLrWaOVg
+🇬🇧 GB | 🔒 SS | @nationalproxytelegram [2] = ss, series-a2.samanehha.co, 443, encrypt-method = chacha20-ietf-poly1305, password = mps3FwmDjLrWaOVg
+🇬🇧 GB | 🔒 SS | @ntgreenplus [1] = ss, admin.c2.webramz.co, 443, encrypt-method = chacha20-ietf-poly1305, password = WstuSnlu4ieA9M0L
+🇺🇸 US | 🔒 SS | @proxy48 [14] = ss, api.namasha.co, 443, encrypt-method = chacha20-ietf-poly1305, password = u17T3BvpYaaiuW2c
+❔ XX | 🔒 SS | @proxy_confiingir [2] = ss, ak1857.www.outline.network.fr8678825324247b8176d59f83c30bd94d23d2e3ac5cd4a743bkwqeikvdyufr.cyou, 443, encrypt-method = chacha20-ietf-poly1305, password = u17T3BvpYaaiuW2c
+🇬🇧 GB | 🔒 SS | @prroxyng [2] = ss, admin.c4.webramz.co, 443, encrypt-method = chacha20-ietf-poly1305, password = 69MUii7VDwMqh7Hz
+🇬🇧 GB | 🔒 SS | @serverv2ray00 [20] = ss, series-a2-me.samanehha.co, 443, encrypt-method = chacha20-ietf-poly1305, password = Bog0ELmMM9DSxDdQ
+🇬🇧 GB | 🔒 SS | @v2rayang201 [8] = ss, series-a1.samanehha.co, 443, encrypt-method = chacha20-ietf-poly1305, password = W74XFALLLuw6m5IA
+🇯🇵 JP | 🔒 SS | @vpn451 [16] = ss, sakura.outlinekeys.net, 1235, encrypt-method = chacha20-ietf-poly1305, password = sINSpdNYGUfLMzsoLD3W5D
+
+[Proxy Group]
+PSG-MANUAL = select, PSG-AUTO, PSG-FALLBACK, 🇬🇧 GB | 🔒 SS | @ai_duet [8], 🇮🇷 IR | 🔒 SS | @configscenter [1], 🇩🇪 DE | 🔒 SS | @freakconfig [15], 🇺🇸 US | 🔒 SS | @freeconfigsplus [19], 🇬🇧 GB | 🔒 SS | @imhdiyvp [9], 🇳🇱 NL | 🔒 SS | @ip_cf_config [15], 🇬🇧 GB | 🔒 SS | @lranonline_new [5], 🇨🇳 CN | 🔒 SS | @mftizi [18], 🇬🇧 GB | 🔒 SS | @nationalproxytelegram [1], 🇬🇧 GB | 🔒 SS | @nationalproxytelegram [2], 🇬🇧 GB | 🔒 SS | @ntgreenplus [1], 🇺🇸 US | 🔒 SS | @proxy48 [14], ❔ XX | 🔒 SS | @proxy_confiingir [2], 🇬🇧 GB | 🔒 SS | @prroxyng [2], 🇬🇧 GB | 🔒 SS | @serverv2ray00 [20], 🇬🇧 GB | 🔒 SS | @v2rayang201 [8], 🇯🇵 JP | 🔒 SS | @vpn451 [16]
+PSG-AUTO = url-test, 🇬🇧 GB | 🔒 SS | @ai_duet [8], 🇮🇷 IR | 🔒 SS | @configscenter [1], 🇩🇪 DE | 🔒 SS | @freakconfig [15], 🇺🇸 US | 🔒 SS | @freeconfigsplus [19], 🇬🇧 GB | 🔒 SS | @imhdiyvp [9], 🇳🇱 NL | 🔒 SS | @ip_cf_config [15], 🇬🇧 GB | 🔒 SS | @lranonline_new [5], 🇨🇳 CN | 🔒 SS | @mftizi [18], 🇬🇧 GB | 🔒 SS | @nationalproxytelegram [1], 🇬🇧 GB | 🔒 SS | @nationalproxytelegram [2], 🇬🇧 GB | 🔒 SS | @ntgreenplus [1], 🇺🇸 US | 🔒 SS | @proxy48 [14], ❔ XX | 🔒 SS | @proxy_confiingir [2], 🇬🇧 GB | 🔒 SS | @prroxyng [2], 🇬🇧 GB | 🔒 SS | @serverv2ray00 [20], 🇬🇧 GB | 🔒 SS | @v2rayang201 [8], 🇯🇵 JP | 🔒 SS | @vpn451 [16]
+PSG-FALLBACK = fallback, 🇬🇧 GB | 🔒 SS | @ai_duet [8], 🇮🇷 IR | 🔒 SS | @configscenter [1], 🇩🇪 DE | 🔒 SS | @freakconfig [15], 🇺🇸 US | 🔒 SS | @freeconfigsplus [19], 🇬🇧 GB | 🔒 SS | @imhdiyvp [9], 🇳🇱 NL | 🔒 SS | @ip_cf_config [15], 🇬🇧 GB | 🔒 SS | @lranonline_new [5], 🇨🇳 CN | 🔒 SS | @mftizi [18], 🇬🇧 GB | 🔒 SS | @nationalproxytelegram [1], 🇬🇧 GB | 🔒 SS | @nationalproxytelegram [2], 🇬🇧 GB | 🔒 SS | @ntgreenplus [1], 🇺🇸 US | 🔒 SS | @proxy48 [14], ❔ XX | 🔒 SS | @proxy_confiingir [2], 🇬🇧 GB | 🔒 SS | @prroxyng [2], 🇬🇧 GB | 🔒 SS | @serverv2ray00 [20], 🇬🇧 GB | 🔒 SS | @v2rayang201 [8], 🇯🇵 JP | 🔒 SS | @vpn451 [16]
+
+[Rule]
+GEOIP,IR,DIRECT
+FINAL,PSG-MANUAL

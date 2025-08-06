@@ -1,0 +1,441 @@
+{
+    "dns": {
+        "independent_cache": true,
+        "rules": [
+            {
+                "domain": [
+                    "dns.google"
+                ],
+                "server": "dns-direct"
+            },
+            {
+                "outbound": [
+                    "any"
+                ],
+                "server": "dns-direct"
+            }
+        ],
+        "servers": [
+            {
+                "address": "tcp://1.1.1.1",
+                "address_resolver": "local-dns",
+                "detour": "proxy",
+                "tag": "proxy-dns"
+            },
+            {
+                "address": "local",
+                "detour": "direct",
+                "tag": "local-dns"
+            },
+            {
+                "address": "tcp://8.8.8.8",
+                "detour": "direct",
+                "tag": "direct-dns"
+            }
+        ]
+    },
+    "experimental": {
+        "cache_file": {
+            "enabled": true,
+            "path": "../cache/clash.db",
+            "store_fakeip": true
+        },
+        "clash_api": {
+            "external_controller": "127.0.0.1:9090",
+            "external_ui": "../files/yacd"
+        }
+    },
+    "inbounds": [
+        {
+            "domain_strategy": "",
+            "endpoint_independent_nat": true,
+            "inet4_address": [
+                "172.19.0.1/28"
+            ],
+            "mtu": 9000,
+            "sniff": true,
+            "sniff_override_destination": false,
+            "stack": "mixed",
+            "tag": "tun-in",
+            "type": "tun"
+        },
+        {
+            "domain_strategy": "",
+            "listen": "127.0.0.1",
+            "listen_port": 2080,
+            "sniff": true,
+            "sniff_override_destination": false,
+            "tag": "mixed-in",
+            "type": "mixed"
+        }
+    ],
+    "log": {
+        "level": "info"
+    },
+    "outbounds": [
+        {
+            "outbounds": [
+                "auto",
+                "direct",
+                "همکاری_ملی",
+                "جاویدشاه",
+                "KingRezaPahlavi",
+                "🇫🇮 FI | 🔒 TUIC | @goodbyefiltering [6]",
+                "🇸🇪 SE | 🔒 TUIC | @vipv2rey [24]",
+                "🇬🇧 GB | 🔒 TUIC | @vipv2rey [26]",
+                "🇬🇧 GB | 🔒 TUIC | @vipv2rey [27]",
+                "🇩🇪 DE | 🔒 TUIC | @vipv2rey [29]",
+                "🇸🇪 SE | 🔒 TUIC | @vipv2rey [31]",
+                "🇸🇪 SE | 🔒 TUIC | @vipv2rey [32]",
+                "🇳🇱 NL | 🔒 TUIC | @vipv2rey [36]",
+                "❔ XX | 🔒 TUIC | @goodbyefiltering [7]",
+                "❔ XX | 🔒 TUIC | @vipv2rey [25]",
+                "❔ XX | 🔒 TUIC | @vipv2rey [28]"
+            ],
+            "tag": "proxy",
+            "type": "selector"
+        },
+        {
+            "interval": "10m",
+            "outbounds": [
+                "همکاری_ملی",
+                "جاویدشاه",
+                "KingRezaPahlavi",
+                "🇫🇮 FI | 🔒 TUIC | @goodbyefiltering [6]",
+                "🇸🇪 SE | 🔒 TUIC | @vipv2rey [24]",
+                "🇬🇧 GB | 🔒 TUIC | @vipv2rey [26]",
+                "🇬🇧 GB | 🔒 TUIC | @vipv2rey [27]",
+                "🇩🇪 DE | 🔒 TUIC | @vipv2rey [29]",
+                "🇸🇪 SE | 🔒 TUIC | @vipv2rey [31]",
+                "🇸🇪 SE | 🔒 TUIC | @vipv2rey [32]",
+                "🇳🇱 NL | 🔒 TUIC | @vipv2rey [36]",
+                "❔ XX | 🔒 TUIC | @goodbyefiltering [7]",
+                "❔ XX | 🔒 TUIC | @vipv2rey [25]",
+                "❔ XX | 🔒 TUIC | @vipv2rey [28]"
+            ],
+            "tag": "auto",
+            "tolerance": 50,
+            "type": "urltest",
+            "url": "http://www.gstatic.com/generate_204"
+        },
+        {
+            "tag": "direct",
+            "type": "direct"
+        },
+        {
+            "tag": "bypass",
+            "type": "direct"
+        },
+        {
+            "tag": "همکاری_ملی",
+            "type": "vless",
+            "server": "127.0.0.1",
+            "server_port": 443,
+            "uuid": "00000000-0000-0000-0000-000000000000",
+            "flow": "",
+            "packet_encoding": "xudp",
+            "tls": {
+                "enabled": true,
+                "server_name": "127.0.0.1",
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "/",
+                "headers": {
+                    "Host": "127.0.0.1"
+                }
+            }
+        },
+        {
+            "tag": "جاویدشاه",
+            "type": "vless",
+            "server": "127.0.0.1",
+            "server_port": 443,
+            "uuid": "00000000-0000-0000-0000-000000000000",
+            "flow": "",
+            "packet_encoding": "xudp",
+            "tls": {
+                "enabled": true,
+                "server_name": "127.0.0.1",
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "/",
+                "headers": {
+                    "Host": "127.0.0.1"
+                }
+            }
+        },
+        {
+            "tag": "KingRezaPahlavi",
+            "type": "vless",
+            "server": "127.0.0.1",
+            "server_port": 443,
+            "uuid": "00000000-0000-0000-0000-000000000000",
+            "flow": "",
+            "packet_encoding": "xudp",
+            "tls": {
+                "enabled": true,
+                "server_name": "127.0.0.1",
+                "insecure": true,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "/",
+                "headers": {
+                    "Host": "127.0.0.1"
+                }
+            }
+        },
+        {
+            "tag": "🇫🇮 FI | 🔒 TUIC | @goodbyefiltering [6]",
+            "type": "tuic",
+            "server": "79.137.206.126",
+            "server_port": 443,
+            "uuid": "7f9a73a3-e455-4053-ae38-f07719753dff",
+            "password": "----Join-Telegram:@IP_CF----",
+            "congestion_control": "cubic",
+            "udp_relay_mode": "native",
+            "tls": {
+                "enabled": true,
+                "server_name": "79.137.206.126",
+                "insecure": true,
+                "alpn": [
+                    "h3",
+                    "spdy/3.1"
+                ]
+            }
+        },
+        {
+            "tag": "🇸🇪 SE | 🔒 TUIC | @vipv2rey [24]",
+            "type": "tuic",
+            "server": "70.34.198.64",
+            "server_port": 443,
+            "uuid": "6313c68a-472b-4999-ba33-094a55ea7549",
+            "password": "FRebRlCrO huXaprEwr6",
+            "congestion_control": "bbr",
+            "udp_relay_mode": "native",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.apple.com",
+                "insecure": true,
+                "alpn": [
+                    "h3",
+                    "spdy/3.1"
+                ]
+            }
+        },
+        {
+            "tag": "🇬🇧 GB | 🔒 TUIC | @vipv2rey [26]",
+            "type": "tuic",
+            "server": "64.176.186.193",
+            "server_port": 443,
+            "uuid": "d1bb3aae-ace9-4b0f-9ae5-85ab73acbb43",
+            "password": "Mahsaamini",
+            "congestion_control": "bbr",
+            "udp_relay_mode": "native",
+            "tls": {
+                "enabled": true,
+                "server_name": "64.176.186.193",
+                "insecure": true,
+                "alpn": [
+                    "h3",
+                    "spdy/3.1"
+                ]
+            }
+        },
+        {
+            "tag": "🇬🇧 GB | 🔒 TUIC | @vipv2rey [27]",
+            "type": "tuic",
+            "server": "64.176.191.133",
+            "server_port": 443,
+            "uuid": "d1bb3aae-ace9-4b0f-9ae5-85ab73acbb43",
+            "password": "Mahsaamini",
+            "congestion_control": "bbr",
+            "udp_relay_mode": "native",
+            "tls": {
+                "enabled": true,
+                "server_name": "64.176.191.133",
+                "insecure": true,
+                "alpn": [
+                    "h3",
+                    "spdy/3.1"
+                ]
+            }
+        },
+        {
+            "tag": "🇩🇪 DE | 🔒 TUIC | @vipv2rey [29]",
+            "type": "tuic",
+            "server": "136.244.88.153",
+            "server_port": 443,
+            "uuid": "38e38f61-b1dd-4b34-90d0-f6222fd7393f",
+            "password": "e7b1c11f0d40cc95",
+            "congestion_control": "bbr",
+            "udp_relay_mode": "native",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.apple.com",
+                "insecure": true,
+                "alpn": [
+                    "h3"
+                ]
+            }
+        },
+        {
+            "tag": "🇸🇪 SE | 🔒 TUIC | @vipv2rey [31]",
+            "type": "tuic",
+            "server": "70.34.197.98",
+            "server_port": 443,
+            "uuid": "87bc1693-8860-41d7-acf4-e6edf49abbbb",
+            "password": "crivAv10hAdr-fop4Lne",
+            "congestion_control": "bbr",
+            "udp_relay_mode": "native",
+            "tls": {
+                "enabled": true,
+                "server_name": "70.34.197.98",
+                "insecure": true,
+                "alpn": [
+                    "h3",
+                    "spdy/3.1"
+                ]
+            }
+        },
+        {
+            "tag": "🇸🇪 SE | 🔒 TUIC | @vipv2rey [32]",
+            "type": "tuic",
+            "server": "70.34.208.3",
+            "server_port": 443,
+            "uuid": "87bc1693-8860-41d7-acf4-e6edf49abbbb",
+            "password": "crivAv10hAdr-fop4Lne",
+            "congestion_control": "bbr",
+            "udp_relay_mode": "native",
+            "tls": {
+                "enabled": true,
+                "server_name": "70.34.208.3",
+                "insecure": true,
+                "alpn": [
+                    "h3",
+                    "spdy/3.1"
+                ]
+            }
+        },
+        {
+            "tag": "🇳🇱 NL | 🔒 TUIC | @vipv2rey [36]",
+            "type": "tuic",
+            "server": "209.250.254.198",
+            "server_port": 443,
+            "uuid": "38e38f61-b1dd-4b34-90d0-f6222fd7393f",
+            "password": "e7b1c11f0d40cc95",
+            "congestion_control": "bbr",
+            "udp_relay_mode": "native",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.apple.com",
+                "insecure": true,
+                "alpn": [
+                    "h3"
+                ]
+            }
+        },
+        {
+            "tag": "❔ XX | 🔒 TUIC | @goodbyefiltering [7]",
+            "type": "tuic",
+            "server": "[2a12:5940:71f8::2]",
+            "server_port": 443,
+            "uuid": "7f9a73a3-e455-4053-ae38-f07719753dff",
+            "password": "----Join-Telegram:@IP_CF----",
+            "congestion_control": "cubic",
+            "udp_relay_mode": "native",
+            "tls": {
+                "enabled": true,
+                "server_name": "[2a12:5940:71f8::2]",
+                "insecure": true,
+                "alpn": [
+                    "h3",
+                    "spdy/3.1"
+                ]
+            }
+        },
+        {
+            "tag": "❔ XX | 🔒 TUIC | @vipv2rey [25]",
+            "type": "tuic",
+            "server": "tuic61.cpionline.us",
+            "server_port": 443,
+            "uuid": "6313c68a-472b-4999-ba33-094a55ea7549",
+            "password": "FRebRlCrO huXaprEwr6",
+            "congestion_control": "bbr",
+            "udp_relay_mode": "native",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.apple.com",
+                "insecure": true,
+                "alpn": [
+                    "h3",
+                    "spdy/3.1"
+                ]
+            }
+        },
+        {
+            "tag": "❔ XX | 🔒 TUIC | @vipv2rey [28]",
+            "type": "tuic",
+            "server": "tuic4.cpionline.us",
+            "server_port": 443,
+            "uuid": "d1bb3aae-ace9-4b0f-9ae5-85ab73acbb43",
+            "password": "Mahsaamini",
+            "congestion_control": "bbr",
+            "udp_relay_mode": "native",
+            "tls": {
+                "enabled": true,
+                "server_name": "tuic4.cpionline.us",
+                "insecure": true,
+                "alpn": [
+                    "h3",
+                    "spdy/3.1"
+                ]
+            }
+        }
+    ],
+    "route": {
+        "auto_detect_interface": true,
+        "rule_set": [],
+        "rules": [
+            {
+                "action": "hijack-dns",
+                "port": [
+                    53
+                ]
+            },
+            {
+                "action": "hijack-dns",
+                "protocol": [
+                    "dns"
+                ]
+            },
+            {
+                "action": "reject",
+                "ip_cidr": [
+                    "224.0.0.0/3",
+                    "ff00::/8"
+                ],
+                "source_ip_cidr": [
+                    "224.0.0.0/3",
+                    "ff00::/8"
+                ]
+            }
+        ]
+    }
+}

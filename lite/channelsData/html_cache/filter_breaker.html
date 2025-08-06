@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Filter breaker - فیلترشکن – Telegram</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible"
+     content="IE=edge" />
+    <meta name="MobileOptimized" content="176" />
+    <meta name="HandheldFriendly" content="True" />
+    
+<meta property="og:title" content="Filter breaker - فیلترشکن">
+<meta property="og:image" content="https://cdn4.telegram.space/file/kLXmQSvOKhqhLVxqe-drDNwaxojP7QIHvrHVgRypPeY-Vsv1Fc6XoNYthkyGqBRqF999MXDLgVsy7mSkuDnNr17eltW3tNliU4VYu41dD6oxK_DVSvWXTU4lLegKFPU85L5rx2bcOIA1Cvg2MTHCHM2j5Qt2QasXdWqy280kIWplDqylQsAHSclpoCSC6eUrd72pj-b8YDYR-jPc3CNaSFVlphBVujLdXUH4W7Y1qFSHe7uMZLLzDvuopQDx2OZIqOkmv7GzBKKs5fuqeZ5wvVHdSSFdyWpTSFADVg0-saTLLr8pHAskCFC-pZgxw7Bm6vyoFVfKgemI8VcRrQHjcg.jpg">
+<meta property="og:site_name" content="Telegram">
+<meta property="og:description" content="آرشیو بروز کانفیگ">
+
+<meta property="twitter:title" content="Filter breaker - فیلترشکن">
+<meta property="twitter:image" content="https://cdn4.telegram.space/file/kLXmQSvOKhqhLVxqe-drDNwaxojP7QIHvrHVgRypPeY-Vsv1Fc6XoNYthkyGqBRqF999MXDLgVsy7mSkuDnNr17eltW3tNliU4VYu41dD6oxK_DVSvWXTU4lLegKFPU85L5rx2bcOIA1Cvg2MTHCHM2j5Qt2QasXdWqy280kIWplDqylQsAHSclpoCSC6eUrd72pj-b8YDYR-jPc3CNaSFVlphBVujLdXUH4W7Y1qFSHe7uMZLLzDvuopQDx2OZIqOkmv7GzBKKs5fuqeZ5wvVHdSSFdyWpTSFADVg0-saTLLr8pHAskCFC-pZgxw7Bm6vyoFVfKgemI8VcRrQHjcg.jpg">
+<meta property="twitter:site" content="@Telegram">
+
+<meta property="al:ios:app_store_id" content="686449807">
+<meta property="al:ios:app_name" content="Telegram Messenger">
+<meta property="al:ios:url" content="tg://resolve?domain=filter_breaker">
+
+<meta property="al:android:url" content="tg://resolve?domain=filter_breaker">
+<meta property="al:android:app_name" content="Telegram">
+<meta property="al:android:package" content="org.telegram.messenger">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@Telegram">
+<meta name="twitter:description" content="آرشیو بروز کانفیگ
+">
+
+    <link rel="prev" href="/s/filter_breaker?before=761">
+<link rel="canonical" href="/s/filter_breaker?before=781">
+
+    <script>window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches&&document.documentElement&&document.documentElement.classList&&document.documentElement.classList.add('theme_dark');</script>
+    <link rel="icon" type="image/svg+xml" href="//telegram.org/img/website_icon.svg?4">
+<link rel="apple-touch-icon" sizes="180x180" href="//telegram.org/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="//telegram.org/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="//telegram.org/img/favicon-16x16.png">
+<link rel="alternate icon" href="//telegram.org/img/favicon.ico" type="image/x-icon" />
+    <link href="//telegram.org/css/font-roboto.css?1" rel="stylesheet" type="text/css">
+    <link href="//telegram.org/css/widget-frame.css?72" rel="stylesheet" media="screen">
+    <link href="//telegram.org/css/telegram-web.css?39" rel="stylesheet" media="screen">
+    <script>TBaseUrl='/';</script>
+    <style>        .user-color-12 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #3391d4 0px, #3391d4 5px, #7dd3f0 5px, #7dd3f0 10px);
+          --user-accent-color: #3391d4;
+          --user-background: #3391d41f;
+        }        .user-color-10 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #27a910 0px, #27a910 5px, #a7dc57 5px, #a7dc57 10px);
+          --user-accent-color: #27a910;
+          --user-background: #27a9101f;
+        }        .user-color-8 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #e0802b 0px, #e0802b 5px, #fac534 5px, #fac534 10px);
+          --user-accent-color: #e0802b;
+          --user-background: #e0802b1f;
+        }        .user-color-7 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #e15052 0px, #e15052 5px, #f9ae63 5px, #f9ae63 10px);
+          --user-accent-color: #e15052;
+          --user-background: #e150521f;
+        }        .user-color-9 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #a05ff3 0px, #a05ff3 5px, #f48fff 5px, #f48fff 10px);
+          --user-accent-color: #a05ff3;
+          --user-background: #a05ff31f;
+        }        .user-color-11 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #27acce 0px, #27acce 5px, #82e8d6 5px, #82e8d6 10px);
+          --user-accent-color: #27acce;
+          --user-background: #27acce1f;
+        }        .user-color-13 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #dd4371 0px, #dd4371 5px, #ffbe9f 5px, #ffbe9f 10px);
+          --user-accent-color: #dd4371;
+          --user-background: #dd43711f;
+        }        .user-color-14 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #247bed 0px, #247bed 5px, #f04856 5px, #f04856 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #247bed;
+          --user-background: #247bed1f;
+        }        .user-color-15 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #d67722 0px, #d67722 5px, #1ea011 5px, #1ea011 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #d67722;
+          --user-background: #d677221f;
+        }        .user-color-16 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #179e42 0px, #179e42 5px, #e84a3f 5px, #e84a3f 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #179e42;
+          --user-background: #179e421f;
+        }        .user-color-17 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #2894af 0px, #2894af 5px, #6fc456 5px, #6fc456 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #2894af;
+          --user-background: #2894af1f;
+        }        .user-color-18 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #0c9ab3 0px, #0c9ab3 5px, #ffad95 5px, #ffad95 10px, #ffe6b5 10px, #ffe6b5 15px);
+          --user-accent-color: #0c9ab3;
+          --user-background: #0c9ab31f;
+        }        .user-color-19 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #7757d6 0px, #7757d6 5px, #f79610 5px, #f79610 10px, #ffde8e 10px, #ffde8e 15px);
+          --user-accent-color: #7757d6;
+          --user-background: #7757d61f;
+        }        .user-color-20 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #1585cf 0px, #1585cf 5px, #f2ab1d 5px, #f2ab1d 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #1585cf;
+          --user-background: #1585cf1f;
+        }        body.dark .user-color-12, html.theme_dark .user-color-12 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #52bfff 0px, #52bfff 5px, #0b5494 5px, #0b5494 10px);
+          --user-accent-color: #52bfff;
+          --user-background: #52bfff1f;
+        }        body.dark .user-color-10, html.theme_dark .user-color-10 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #a7eb6e 0px, #a7eb6e 5px, #167e2d 5px, #167e2d 10px);
+          --user-accent-color: #a7eb6e;
+          --user-background: #a7eb6e1f;
+        }        body.dark .user-color-8, html.theme_dark .user-color-8 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #ecb04e 0px, #ecb04e 5px, #c35714 5px, #c35714 10px);
+          --user-accent-color: #ecb04e;
+          --user-background: #ecb04e1f;
+        }        body.dark .user-color-7, html.theme_dark .user-color-7 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #ff9380 0px, #ff9380 5px, #992f37 5px, #992f37 10px);
+          --user-accent-color: #ff9380;
+          --user-background: #ff93801f;
+        }        body.dark .user-color-9, html.theme_dark .user-color-9 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #c697ff 0px, #c697ff 5px, #5e31c8 5px, #5e31c8 10px);
+          --user-accent-color: #c697ff;
+          --user-background: #c697ff1f;
+        }        body.dark .user-color-11, html.theme_dark .user-color-11 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #40d8d0 0px, #40d8d0 5px, #045c7f 5px, #045c7f 10px);
+          --user-accent-color: #40d8d0;
+          --user-background: #40d8d01f;
+        }        body.dark .user-color-13, html.theme_dark .user-color-13 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #ff86a6 0px, #ff86a6 5px, #8e366e 5px, #8e366e 10px);
+          --user-accent-color: #ff86a6;
+          --user-background: #ff86a61f;
+        }        body.dark .user-color-14, html.theme_dark .user-color-14 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #3fa2fe 0px, #3fa2fe 5px, #e5424f 5px, #e5424f 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #3fa2fe;
+          --user-background: #3fa2fe1f;
+        }        body.dark .user-color-15, html.theme_dark .user-color-15 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #ff905e 0px, #ff905e 5px, #32a527 5px, #32a527 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #ff905e;
+          --user-background: #ff905e1f;
+        }        body.dark .user-color-16, html.theme_dark .user-color-16 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #66d364 0px, #66d364 5px, #d5444f 5px, #d5444f 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #66d364;
+          --user-background: #66d3641f;
+        }        body.dark .user-color-17, html.theme_dark .user-color-17 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #22bce2 0px, #22bce2 5px, #3da240 5px, #3da240 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #22bce2;
+          --user-background: #22bce21f;
+        }        body.dark .user-color-18, html.theme_dark .user-color-18 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #22bce2 0px, #22bce2 5px, #ff9778 5px, #ff9778 10px, #ffda6b 10px, #ffda6b 15px);
+          --user-accent-color: #22bce2;
+          --user-background: #22bce21f;
+        }        body.dark .user-color-19, html.theme_dark .user-color-19 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #9791ff 0px, #9791ff 5px, #f2731d 5px, #f2731d 10px, #ffdb59 10px, #ffdb59 15px);
+          --user-accent-color: #9791ff;
+          --user-background: #9791ff1f;
+        }        body.dark .user-color-20, html.theme_dark .user-color-20 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #3da6eb 0px, #3da6eb 5px, #eea51d 5px, #eea51d 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #3da6eb;
+          --user-background: #3da6eb1f;
+        }.user-color-6, .user-color-4, .user-color-2, .user-color-0, .user-color-1, .user-color-3, .user-color-5,   .user-color-default {
+    --user-accent-color: var(--accent-color);
+    --user-accent-background: var(--accent-background);
+    --user-line-gradient: linear-gradient(45deg, var(--accent-color), var(--accent-color));
+  }</style>
+  </head>
+  <body class="widget_frame_base tgme_webpreview emoji_image thin_box_shadow tme_mode no_transitions">
+    <div class="tgme_background_wrap">
+      <canvas id="tgme_background" class="tgme_background" width="50" height="50" data-colors="dbddbb,6ba587,d5d88d,88b884"></canvas>
+      <div class="tgme_background_pattern"></div>
+    </div>
+    <header class="tgme_header search_collapsed">
+  <div class="tgme_container">
+    <div class="tgme_header_search">
+      <form class="tgme_header_search_form" action="/s/filter_breaker">
+        <svg class="tgme_header_search_form_icon" width="20" height="20" viewBox="0 0 20 20"><g fill="none" stroke="#7D7F81" stroke-width="1.4"><circle cx="9" cy="9" r="6"></circle><path d="M13.5,13.5 L17,17" stroke-linecap="round"></path></g></svg>
+        <input class="tgme_header_search_form_input js-header_search" placeholder="Search" name="q" autocomplete="off" value="" />
+        <a href="/s/filter_breaker" class="tgme_header_search_form_clear"><svg class="tgme_action_button_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20"><g class="icon_body" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#000000" stroke-width="1.5"><path d="M6 14l8-8m0 8L6 6" stroke-dasharray="0,11.314" stroke-dashoffset="5.657"/><path d="M26 14l8-8m0 8l-8-8" stroke-dasharray="0.371,10.943" stroke-dashoffset="5.842"/><path d="M46 14l8-8m0 8l-8-8" stroke-dasharray="1.982,9.332" stroke-dashoffset="6.647756"/><path d="M66 14l8-8m0 8l-8-8" stroke-dasharray="5.173,6.14" stroke-dashoffset="8.243"/><path d="M86 14l8-8m0 8l-8-8" stroke-dasharray="7.866,3.448" stroke-dashoffset="9.59"/><path d="M106 14l8-8m0 8l-8-8" stroke-dasharray="9.471,1.843" stroke-dashoffset="10.392"/><path d="M126 14l8-8m0 8l-8-8" stroke-dasharray="10.417,0.896" stroke-dashoffset="10.866"/><path d="M146 14l8-8m0 8l-8-8" stroke-dasharray="10.961,0.353" stroke-dashoffset="11.137"/><path d="M166 14l8-8m0 8l-8-8" stroke-dasharray="11.234,0.08" stroke-dashoffset="11.274"/><path d="M186 14l8-8m0 8l-8-8"/></g></svg></a>
+      </form>
+    </div>
+    <div class="tgme_header_right_column">
+      <section class="tgme_right_column">
+        <div class="tgme_channel_info">
+          <div class="tgme_channel_info_header">
+            <i class="tgme_page_photo_image bgcolor5" data-content="Fف"><img src="https://cdn4.telegram.space/file/ULfFfAygmsAdCUKlXdrj6D8QYm8yq7LX6AqEHtU-N_1CxZOx_kZcw5Bn-DZC09v1MntFw-C_dsxukNHGIPlyY8M0ZOXXuZoknyP5zvTV4_zwMczaC4AJKFIz39_3lZVEJNSUJDsaWoOJ1JmQ8MsSgbLy5Cur5aqnMvu5JJH5TErifcde-ud7IwAHb_WI_C8RqWERGJboKyqjp9rWcd3_YKdXuaZPoTgzgyaU5dn-RTmbd7d0WiD4xXBc9sx8V_8BngpVUN8rw-OiclbTknkO24ef5t6PMZ-QwGFQIh5PjWcTkRWRqiArp9SKhbk_72aCzxcRrIWOc5i_dAWPhJ0_cw.jpg"></i>
+            <div class="tgme_channel_info_header_title_wrap">
+              <div class="tgme_channel_info_header_title"><span dir="auto">Filter breaker - فیلترشکن</span></div>
+              <div class="tgme_channel_info_header_labels"></div>
+            </div>
+            <div class="tgme_channel_info_header_username"><a href="https://t.me/filter_breaker">@filter_breaker</a></div>
+          </div>
+          <div class="tgme_channel_info_counters"><div class="tgme_channel_info_counter"><span class="counter_value">1.6K</span> <span class="counter_type">subscribers</span></div><div class="tgme_channel_info_counter"><span class="counter_value">13</span> <span class="counter_type">photos</span></div><div class="tgme_channel_info_counter"><span class="counter_value">19</span> <span class="counter_type">videos</span></div><div class="tgme_channel_info_counter"><span class="counter_value">3</span> <span class="counter_type">files</span></div><div class="tgme_channel_info_counter"><span class="counter_value">12</span> <span class="counter_type">links</span></div></div>
+          <div class="tgme_channel_info_description">آرشیو بروز کانفیگ</div>
+          <a class="tgme_channel_download_telegram" href="//telegram.org/dl?tme=b11aa93144c96943df_6435350232552336032">
+            <svg class="tgme_channel_download_telegram_icon" width="21px" height="18px" viewBox="0 0 21 18"><g fill="none"><path fill="#ffffff" d="M0.554,7.092 L19.117,0.078 C19.737,-0.156 20.429,0.156 20.663,0.776 C20.745,0.994 20.763,1.23 20.713,1.457 L17.513,16.059 C17.351,16.799 16.62,17.268 15.88,17.105 C15.696,17.065 15.523,16.987 15.37,16.877 L8.997,12.271 C8.614,11.994 8.527,11.458 8.805,11.074 C8.835,11.033 8.869,10.994 8.905,10.958 L15.458,4.661 C15.594,4.53 15.598,4.313 15.467,4.176 C15.354,4.059 15.174,4.037 15.036,4.125 L6.104,9.795 C5.575,10.131 4.922,10.207 4.329,10.002 L0.577,8.704 C0.13,8.55 -0.107,8.061 0.047,7.614 C0.131,7.374 0.316,7.182 0.554,7.092 Z"></path></g></svg>Download Telegram
+          </a>
+          <div class="tgme_footer">
+            <div class="tgme_footer_column">
+              <h5><a href="//telegram.org/faq">About</a></h5>
+            </div>
+            <div class="tgme_footer_column">
+              <h5><a href="//telegram.org/blog">Blog</a></h5>
+            </div>
+            <div class="tgme_footer_column">
+              <h5><a href="//telegram.org/apps">Apps</a></h5>
+            </div>
+            <div class="tgme_footer_column">
+              <h5><a href="//core.telegram.org/">Platform</a></h5>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="tgme_header_info">
+      <a class="tgme_channel_join_telegram" href="//telegram.org/dl?tme=b11aa93144c96943df_6435350232552336032">
+        <svg class="tgme_channel_join_telegram_icon" width="19px" height="16px" viewBox="0 0 19 16"><g fill="none"><path fill="#ffffff" d="M0.465,6.638 L17.511,0.073 C18.078,-0.145 18.714,0.137 18.932,0.704 C19.009,0.903 19.026,1.121 18.981,1.33 L16.042,15.001 C15.896,15.679 15.228,16.111 14.549,15.965 C14.375,15.928 14.211,15.854 14.068,15.748 L8.223,11.443 C7.874,11.185 7.799,10.694 8.057,10.345 C8.082,10.311 8.109,10.279 8.139,10.249 L14.191,4.322 C14.315,4.201 14.317,4.002 14.195,3.878 C14.091,3.771 13.926,3.753 13.8,3.834 L5.602,9.138 C5.112,9.456 4.502,9.528 3.952,9.333 L0.486,8.112 C0.077,7.967 -0.138,7.519 0.007,7.11 C0.083,6.893 0.25,6.721 0.465,6.638 Z"></path></g></svg>Join
+      </a>
+      <a class="tgme_header_link" href="https://t.me/filter_breaker">
+        <i class="tgme_page_photo_image bgcolor5" data-content="Fف"><img src="https://cdn4.telegram.space/file/ULfFfAygmsAdCUKlXdrj6D8QYm8yq7LX6AqEHtU-N_1CxZOx_kZcw5Bn-DZC09v1MntFw-C_dsxukNHGIPlyY8M0ZOXXuZoknyP5zvTV4_zwMczaC4AJKFIz39_3lZVEJNSUJDsaWoOJ1JmQ8MsSgbLy5Cur5aqnMvu5JJH5TErifcde-ud7IwAHb_WI_C8RqWERGJboKyqjp9rWcd3_YKdXuaZPoTgzgyaU5dn-RTmbd7d0WiD4xXBc9sx8V_8BngpVUN8rw-OiclbTknkO24ef5t6PMZ-QwGFQIh5PjWcTkRWRqiArp9SKhbk_72aCzxcRrIWOc5i_dAWPhJ0_cw.jpg"></i>
+        <div class="tgme_header_title_wrap">
+          <div class="tgme_header_title"><span dir="auto">Filter breaker - فیلترشکن</span></div>
+          <div class="tgme_header_labels"></div>
+        </div>
+        <div class="tgme_header_counter">1.6K subscribers</div>
+      </a>
+    </div>
+  </div>
+</header>
+<main class="tgme_main" data-url="/filter_breaker">
+  <div class="tgme_container">
+    <section class="tgme_channel_history js-message_history">
+      <div class="tgme_widget_message_centered js-messages_more_wrap"><a href="/s/filter_breaker?before=761" class="tme_messages_more js-messages_more" data-before="761"></a></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="Filter_breaker/761" data-view="eyJjIjotMTg0ODM3MjI1OCwicCI6NzYxLCJ0IjoxNzU0MjI0MTA4LCJoIjoiMGJhZjI3MjI4NjM3Mjk5MDFiIn0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/Filter_breaker"><i class="tgme_widget_message_user_photo bgcolor5" data-content="F"><img src="https://cdn4.telegram.space/file/ULfFfAygmsAdCUKlXdrj6D8QYm8yq7LX6AqEHtU-N_1CxZOx_kZcw5Bn-DZC09v1MntFw-C_dsxukNHGIPlyY8M0ZOXXuZoknyP5zvTV4_zwMczaC4AJKFIz39_3lZVEJNSUJDsaWoOJ1JmQ8MsSgbLy5Cur5aqnMvu5JJH5TErifcde-ud7IwAHb_WI_C8RqWERGJboKyqjp9rWcd3_YKdXuaZPoTgzgyaU5dn-RTmbd7d0WiD4xXBc9sx8V_8BngpVUN8rw-OiclbTknkO24ef5t6PMZ-QwGFQIh5PjWcTkRWRqiArp9SKhbk_72aCzxcRrIWOc5i_dAWPhJ0_cw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/Filter_breaker"><span dir="auto">Filter breaker - فیلترشکن</span></a></div>
+
+
+<div class="tgme_widget_message_text js-message_text" dir="auto">کانفیگ کمکی جهت اتصال:<br/>حجم محدود و موقت<br/><pre>vless://4b9063e0-3288-44e9-9aac-80fbfce323a0@83.222.23.81:38065?security=reality&amp;sni=yahoo.com&amp;fp=chrome&amp;pbk=dSSDPTK6AHfAdRAXD9i4rzqcNIY65RxlF25UyCKdiyo&amp;sid=fa&amp;type=tcp&amp;packetEncoding=xudp&amp;encryption=none#@Filter_breaker<br/>vless://e4824193-4f54-453b-d037-88368e85ef0e@45.82.251.78:8880?security=none&amp;type=grpc&amp;packetEncoding=xudp&amp;encryption=none#@Filter_breaker<br/>vless://e4824193-4f54-453b-d037-88368e85ef0e@45.82.251.58:8880?security=none&amp;type=grpc&amp;packetEncoding=xudp&amp;encryption=none#@Filter_breaker<br/>vless://ccbe6b7c-9264-40c4-8bc1-ef8f6205d7a4@www.speedtest.net:8443?security=tls&amp;sni=lease-10.access.name.ng&amp;type=ws&amp;path=/&amp;host=lease-10.access.name.ng&amp;packetEncoding=xudp&amp;encryption=none#@Filter_breaker<br/>vless://e4824193-4f54-453b-d037-88368e85ef0e@public15v7.fastipsport.com:8880?security=none&amp;type=grpc&amp;packetEncoding=xudp&amp;encryption=none#@Filter_breaker</pre><br/><a href="https://t.me/Filter_breaker" target="_blank">@Filter_breaker</a></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">264</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/Filter_breaker/761"><time datetime="2025-08-02T10:10:00+00:00" class="time">10:10</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="Filter_breaker/762" data-view="eyJjIjotMTg0ODM3MjI1OCwicCI6NzYyLCJ0IjoxNzU0MjI0MTA4LCJoIjoiYWQ5YWI3OWIzOGVmZTM1YzdlIn0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/Filter_breaker"><i class="tgme_widget_message_user_photo bgcolor5" data-content="F"><img src="https://cdn4.telegram.space/file/ULfFfAygmsAdCUKlXdrj6D8QYm8yq7LX6AqEHtU-N_1CxZOx_kZcw5Bn-DZC09v1MntFw-C_dsxukNHGIPlyY8M0ZOXXuZoknyP5zvTV4_zwMczaC4AJKFIz39_3lZVEJNSUJDsaWoOJ1JmQ8MsSgbLy5Cur5aqnMvu5JJH5TErifcde-ud7IwAHb_WI_C8RqWERGJboKyqjp9rWcd3_YKdXuaZPoTgzgyaU5dn-RTmbd7d0WiD4xXBc9sx8V_8BngpVUN8rw-OiclbTknkO24ef5t6PMZ-QwGFQIh5PjWcTkRWRqiArp9SKhbk_72aCzxcRrIWOc5i_dAWPhJ0_cw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/Filter_breaker"><span dir="auto">Filter breaker - فیلترشکن</span></a></div>
+
+
+<div class="tgme_widget_message_text js-message_text" dir="auto">کانفیگ کمکی جهت اتصال:<br/>حجم محدود و موقت<br/><pre>vless://4c26ebc3-7784-46d8-b52a-7b0ccae6f4b4@amazon-4.cristiano.name.ng:443?security=reality&amp;sni=store.steampowered.com&amp;fp=chrome&amp;pbk=TGlPtfVzGIVpMauPRMGJj2Uu6GUiCpu5ZizIIjw-wx4&amp;sid=f5&amp;type=tcp&amp;flow=xtls-rprx-vision&amp;packetEncoding=xudp&amp;encryption=none#@Filter_breaker<br/>vless://e4824193-4f54-453b-d037-88368e85ef0e@public18v7.fastipsport.com:8880?security=none&amp;type=grpc&amp;packetEncoding=xudp&amp;encryption=none#@Filter_breaker<br/>vless://8e6acce9-8b56-7190-d491-7d84f8189e26@5.181.171.2:443?security=reality&amp;sni=speed.cloudflare.com&amp;fp=chrome&amp;pbk=YNGotlyAx3ELUmi4lxOUjiEDmibqf1pPUTE9o3YYT2Y&amp;type=tcp&amp;flow=xtls-rprx-vision&amp;packetEncoding=xudp&amp;encryption=none#@Filter_breaker<br/>vless://e4824193-4f54-453b-d037-88368e85ef0e@45.82.251.78:8880?security=none&amp;type=grpc&amp;packetEncoding=xudp&amp;encryption=none#@Filter_breaker<br/>ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpZWGdTOENvbVRhbTdxb2VzUGx6bE1v@83.147.216.70:64519#@Filter_breaker</pre><br/><a href="https://t.me/Filter_breaker" target="_blank">@Filter_breaker</a></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">233</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/Filter_breaker/762"><time datetime="2025-08-02T11:49:48+00:00" class="time">11:49</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="Filter_breaker/763" data-view="eyJjIjotMTg0ODM3MjI1OCwicCI6NzYzLCJ0IjoxNzU0MjI0MTA4LCJoIjoiYzIwMjkwM2Y0YzliMjA0NGViIn0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/Filter_breaker"><i class="tgme_widget_message_user_photo bgcolor5" data-content="F"><img src="https://cdn4.telegram.space/file/ULfFfAygmsAdCUKlXdrj6D8QYm8yq7LX6AqEHtU-N_1CxZOx_kZcw5Bn-DZC09v1MntFw-C_dsxukNHGIPlyY8M0ZOXXuZoknyP5zvTV4_zwMczaC4AJKFIz39_3lZVEJNSUJDsaWoOJ1JmQ8MsSgbLy5Cur5aqnMvu5JJH5TErifcde-ud7IwAHb_WI_C8RqWERGJboKyqjp9rWcd3_YKdXuaZPoTgzgyaU5dn-RTmbd7d0WiD4xXBc9sx8V_8BngpVUN8rw-OiclbTknkO24ef5t6PMZ-QwGFQIh5PjWcTkRWRqiArp9SKhbk_72aCzxcRrIWOc5i_dAWPhJ0_cw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/Filter_breaker"><span dir="auto">Filter breaker - فیلترشکن</span></a></div>
+
+
+<div class="tgme_widget_message_text js-message_text" dir="auto">کانفیگ کمکی جهت اتصال:<br/>حجم محدود و موقت<br/><pre>vless://e4824193-4f54-453b-d037-88368e85ef0e@public18v7.fastipsport.com:8880?security=none&amp;type=grpc&amp;packetEncoding=xudp&amp;encryption=none#@Filter_breaker<br/>vless://4c26ebc3-7784-46d8-b52a-7b0ccae6f4b4@amazon-17.cristiano.name.ng:443?security=reality&amp;sni=store.steampowered.com&amp;fp=chrome&amp;pbk=TGlPtfVzGIVpMauPRMGJj2Uu6GUiCpu5ZizIIjw-wx4&amp;sid=f5&amp;type=tcp&amp;flow=xtls-rprx-vision&amp;packetEncoding=xudp&amp;encryption=none#@Filter_breaker<br/>vless://4c26ebc3-7784-46d8-b52a-7b0ccae6f4b4@amazon-20.cristiano.name.ng:443?security=reality&amp;sni=store.steampowered.com&amp;fp=chrome&amp;pbk=TGlPtfVzGIVpMauPRMGJj2Uu6GUiCpu5ZizIIjw-wx4&amp;sid=f5&amp;type=tcp&amp;flow=xtls-rprx-vision&amp;packetEncoding=xudp&amp;encryption=none#@Filter_breaker<br/>vless://e4824193-4f54-453b-d037-88368e85ef0e@45.82.251.122:8880?security=none&amp;type=grpc&amp;packetEncoding=xudp&amp;encryption=none#@Filter_breaker<br/>vless://a2691bdd-7989-4e7e-9c44-302e360c021f@185.208.77.113:14040?security=none&amp;type=ws&amp;path=/&amp;packetEncoding=xudp&amp;encryption=none#@Filter_breaker</pre><br/><a href="https://t.me/Filter_breaker" target="_blank">@Filter_breaker</a></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">254</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/Filter_breaker/763"><time datetime="2025-08-02T11:50:40+00:00" class="time">11:50</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="Filter_breaker/764" data-view="eyJjIjotMTg0ODM3MjI1OCwicCI6NzY0LCJ0IjoxNzU0MjI0MTA4LCJoIjoiZDczY2NlZjJlZDQ1MDBkMWQxIn0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/Filter_breaker"><i class="tgme_widget_message_user_photo bgcolor5" data-content="F"><img src="https://cdn4.telegram.space/file/ULfFfAygmsAdCUKlXdrj6D8QYm8yq7LX6AqEHtU-N_1CxZOx_kZcw5Bn-DZC09v1MntFw-C_dsxukNHGIPlyY8M0ZOXXuZoknyP5zvTV4_zwMczaC4AJKFIz39_3lZVEJNSUJDsaWoOJ1JmQ8MsSgbLy5Cur5aqnMvu5JJH5TErifcde-ud7IwAHb_WI_C8RqWERGJboKyqjp9rWcd3_YKdXuaZPoTgzgyaU5dn-RTmbd7d0WiD4xXBc9sx8V_8BngpVUN8rw-OiclbTknkO24ef5t6PMZ-QwGFQIh5PjWcTkRWRqiArp9SKhbk_72aCzxcRrIWOc5i_dAWPhJ0_cw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/Filter_breaker"><span dir="auto">Filter breaker - فیلترشکن</span></a></div>
+
+
+<div class="tgme_widget_message_text js-message_text" dir="auto">کانفیگ کمکی جهت اتصال:<br/>حجم محدود و موقت<br/><pre>vless://57ba2ab1-a283-42eb-82ee-dc3561a805b8@172.67.153.156:8443?security=tls&amp;sni=ovhwuxian.pai50288.uk&amp;fp=chrome&amp;type=ws&amp;path=/57ba2ab1&amp;host=ovhwuxian.pai50288.uk&amp;packetEncoding=xudp&amp;encryption=none#@Filter_breaker<br/>vless://2a02cb25-0f58-4b19-a7a6-8c205fdb9042@ind01-vlr01.tcp-reset-club.net:443?security=reality&amp;sni=hls-svod.itunes.apple.com&amp;fp=chrome&amp;pbk=mLmBhbVFfNuo2eUgBh6r9-5Koz9mUCn3aSzlR6IejUg&amp;sid=d3b13f31&amp;type=tcp&amp;flow=xtls-rprx-vision&amp;packetEncoding=xudp&amp;encryption=none#@Filter_breaker<br/>vless://59171a5a-c42c-47be-aaf1-cbaefcc5a07d@104.21.36.57:443?security=tls&amp;sni=sample.fullmargintraders.com&amp;fp=firefox&amp;type=ws&amp;path=/wsv/59171a5a-c42c-47be-aaf1-cbaefcc5a07d&amp;host=sample.fullmargintraders.com&amp;packetEncoding=xudp&amp;encryption=none#@Filter_breaker<br/>vless://320bc89e-2a48-42c4-b7b2-0f982342a9fe@5.181.3.169:2040?security=reality&amp;sni=tradingview.com&amp;fp=chrome&amp;pbk=hOt5bCyO5AwK6aGZKIOBR0U-wPgu_13HjvTMAfBgAT0&amp;type=tcp&amp;flow=xtls-rprx-vision&amp;packetEncoding=xudp&amp;encryption=none#@Filter_breaker<br/>vless://e4824193-4f54-453b-d037-88368e85ef0e@45.82.251.122:8880?security=none&amp;type=grpc&amp;packetEncoding=xudp&amp;encryption=none#@Filter_breaker</pre><br/><a href="https://t.me/Filter_breaker" target="_blank">@Filter_breaker</a></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">293</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/Filter_breaker/764"><time datetime="2025-08-02T11:51:38+00:00" class="time">11:51</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="Filter_breaker/765" data-view="eyJjIjotMTg0ODM3MjI1OCwicCI6NzY1LCJ0IjoxNzU0MjI0MTA4LCJoIjoiMjIwYzk3Y2Y2MjY0YzUwNGEzIn0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/Filter_breaker"><i class="tgme_widget_message_user_photo bgcolor5" data-content="F"><img src="https://cdn4.telegram.space/file/ULfFfAygmsAdCUKlXdrj6D8QYm8yq7LX6AqEHtU-N_1CxZOx_kZcw5Bn-DZC09v1MntFw-C_dsxukNHGIPlyY8M0ZOXXuZoknyP5zvTV4_zwMczaC4AJKFIz39_3lZVEJNSUJDsaWoOJ1JmQ8MsSgbLy5Cur5aqnMvu5JJH5TErifcde-ud7IwAHb_WI_C8RqWERGJboKyqjp9rWcd3_YKdXuaZPoTgzgyaU5dn-RTmbd7d0WiD4xXBc9sx8V_8BngpVUN8rw-OiclbTknkO24ef5t6PMZ-QwGFQIh5PjWcTkRWRqiArp9SKhbk_72aCzxcRrIWOc5i_dAWPhJ0_cw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/Filter_breaker"><span dir="auto">Filter breaker - فیلترشکن</span></a></div>
+
+
+<div class="tgme_widget_message_text js-message_text" dir="auto">کانفیگ کمکی جهت اتصال:<br/>حجم محدود و موقت<br/><pre>ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpmOGY3YUN6Y1BLYnNGOHAz@185.192.124.188:990#@Filter_breaker<br/>vless://30f2d443-af46-4dd6-83c9-b5e17299ebd2@104.26.15.69:2096?security=tls&amp;sni=carlotta.shoorekeeper.cloudns.org&amp;alpn=http/1.1&amp;fp=randomized&amp;type=ws&amp;path=/proxyip%3Dzani.yaemiko.ggff.net&amp;host=carlotta.shoorekeeper.cloudns.org&amp;packetEncoding=xudp&amp;encryption=none#@Filter_breaker<br/>ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpmOGY3YUN6Y1BLYnNGOHAz@104.192.226.106:990#@Filter_breaker<br/>ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpmOGY3YUN6Y1BLYnNGOHAz@185.47.252.251:990#@Filter_breaker<br/>ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpmOGY3YUN6Y1BLYnNGOHAz@185.47.253.171:990#@Filter_breaker</pre><br/><a href="https://t.me/Filter_breaker" target="_blank">@Filter_breaker</a></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">199</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/Filter_breaker/765"><time datetime="2025-08-02T12:44:39+00:00" class="time">12:44</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="Filter_breaker/766" data-view="eyJjIjotMTg0ODM3MjI1OCwicCI6NzY2LCJ0IjoxNzU0MjI0MTA4LCJoIjoiNjI1YTZkZTAwY2Y2ZmE5Zjg5In0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/Filter_breaker"><i class="tgme_widget_message_user_photo bgcolor5" data-content="F"><img src="https://cdn4.telegram.space/file/ULfFfAygmsAdCUKlXdrj6D8QYm8yq7LX6AqEHtU-N_1CxZOx_kZcw5Bn-DZC09v1MntFw-C_dsxukNHGIPlyY8M0ZOXXuZoknyP5zvTV4_zwMczaC4AJKFIz39_3lZVEJNSUJDsaWoOJ1JmQ8MsSgbLy5Cur5aqnMvu5JJH5TErifcde-ud7IwAHb_WI_C8RqWERGJboKyqjp9rWcd3_YKdXuaZPoTgzgyaU5dn-RTmbd7d0WiD4xXBc9sx8V_8BngpVUN8rw-OiclbTknkO24ef5t6PMZ-QwGFQIh5PjWcTkRWRqiArp9SKhbk_72aCzxcRrIWOc5i_dAWPhJ0_cw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/Filter_breaker"><span dir="auto">Filter breaker - فیلترشکن</span></a></div>
+
+
+<div class="tgme_widget_message_text js-message_text" dir="auto">کانفیگ کمکی جهت اتصال:<br/>حجم محدود و موقت<br/><pre>vless://8e6acce9-8b56-7190-d491-7d84f8189e26@103.175.79.2:443?security=reality&amp;sni=speed.cloudflare.com&amp;fp=chrome&amp;pbk=4e-unF1RO2v--E7-X3aqxnCSPaK9QaTfJ7LawAr2bRI&amp;type=tcp&amp;flow=xtls-rprx-vision&amp;packetEncoding=xudp&amp;encryption=none#@Filter_breaker<br/>vless://f278037e-ce36-4634-9b4d-fca93e345a35@104.16.191.195:80?security=none&amp;type=ws&amp;path=/JOKERRVPN_BIA_CHANEL@JOKERRVPN?ed%3D2560&amp;host=barayeiran.mahiozonboroon.qzz.io&amp;packetEncoding=xudp&amp;encryption=none#@Filter_breaker<br/>ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpmOGY3YUN6Y1BLYnNGOHAz@103.163.218.2:990#@Filter_breaker<br/>vless://6c11247b-6078-461a-93d5-22e4df284e6d@104.21.36.57:443?security=tls&amp;sni=mirror.fullmargintraders.com&amp;type=ws&amp;path=/wsv/6c11247b-6078-461a-93d5-22e4df284e6d&amp;host=mirror.fullmargintraders.com&amp;packetEncoding=xudp&amp;encryption=none#@Filter_breaker</pre><br/><a href="https://t.me/Filter_breaker" target="_blank">@Filter_breaker</a></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">205</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/Filter_breaker/766"><time datetime="2025-08-02T12:45:21+00:00" class="time">12:45</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="Filter_breaker/767" data-view="eyJjIjotMTg0ODM3MjI1OCwicCI6NzY3LCJ0IjoxNzU0MjI0MTA4LCJoIjoiNzc1ZTY0M2Y1NWUxNGEwMGM4In0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/Filter_breaker"><i class="tgme_widget_message_user_photo bgcolor5" data-content="F"><img src="https://cdn4.telegram.space/file/ULfFfAygmsAdCUKlXdrj6D8QYm8yq7LX6AqEHtU-N_1CxZOx_kZcw5Bn-DZC09v1MntFw-C_dsxukNHGIPlyY8M0ZOXXuZoknyP5zvTV4_zwMczaC4AJKFIz39_3lZVEJNSUJDsaWoOJ1JmQ8MsSgbLy5Cur5aqnMvu5JJH5TErifcde-ud7IwAHb_WI_C8RqWERGJboKyqjp9rWcd3_YKdXuaZPoTgzgyaU5dn-RTmbd7d0WiD4xXBc9sx8V_8BngpVUN8rw-OiclbTknkO24ef5t6PMZ-QwGFQIh5PjWcTkRWRqiArp9SKhbk_72aCzxcRrIWOc5i_dAWPhJ0_cw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/Filter_breaker"><span dir="auto">Filter breaker - فیلترشکن</span></a></div>
+
+
+<div class="tgme_widget_message_text js-message_text" dir="auto">کانفیگ کمکی جهت اتصال:<br/>حجم محدود و موقت<br/><pre>vless://30f2d443-af46-4dd6-83c9-b5e17299ebd2@www.ums.id:443?security=tls&amp;sni=carlotta.shoorekeeper.cloudns.org&amp;alpn=http/1.1&amp;fp=randomized&amp;type=ws&amp;path=/proxyip%3Dzani.yaemiko.ggff.net&amp;host=carlotta.shoorekeeper.cloudns.org&amp;packetEncoding=xudp&amp;encryption=none#@Filter_breaker<br/>vless://e4824193-4f54-453b-d037-88368e85ef0e@45.82.251.78:8880?security=none&amp;type=grpc&amp;packetEncoding=xudp&amp;encryption=none#@Filter_breaker<br/>vless://fa1216ee-27f2-4435-a21f-a71ecef1f4a8@185.218.86.102:44140?security=none&amp;type=ws&amp;path=/&amp;packetEncoding=xudp&amp;encryption=none#@Filter_breaker<br/>vless://ac083fa9-df9a-4722-b70d-24c17bef0516@185.243.49.205:8444?security=none&amp;type=tcp&amp;headerType=http&amp;host=speedtest.net&amp;packetEncoding=xudp&amp;encryption=none#@Filter_breaker<br/>vless://f5cf098f-5143-440f-a490-7fc24ff27fb0@104.26.7.89:8443?security=tls&amp;sni=brmahasang.ahaysiahzangi.dpdns.org&amp;fp=random&amp;type=ws&amp;path=/?ed%3D2560&amp;host=brmahasang.ahaysiahzangi.dpdns.org&amp;packetEncoding=xudp&amp;encryption=none#@Filter_breaker</pre><br/><a href="https://t.me/Filter_breaker" target="_blank">@Filter_breaker</a></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">219</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/Filter_breaker/767"><time datetime="2025-08-02T12:46:33+00:00" class="time">12:46</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="Filter_breaker/768" data-view="eyJjIjotMTg0ODM3MjI1OCwicCI6NzY4LCJ0IjoxNzU0MjI0MTA4LCJoIjoiZjM4ZmEwZTE4NTk0MTZmZDFkIn0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/Filter_breaker"><i class="tgme_widget_message_user_photo bgcolor5" data-content="F"><img src="https://cdn4.telegram.space/file/ULfFfAygmsAdCUKlXdrj6D8QYm8yq7LX6AqEHtU-N_1CxZOx_kZcw5Bn-DZC09v1MntFw-C_dsxukNHGIPlyY8M0ZOXXuZoknyP5zvTV4_zwMczaC4AJKFIz39_3lZVEJNSUJDsaWoOJ1JmQ8MsSgbLy5Cur5aqnMvu5JJH5TErifcde-ud7IwAHb_WI_C8RqWERGJboKyqjp9rWcd3_YKdXuaZPoTgzgyaU5dn-RTmbd7d0WiD4xXBc9sx8V_8BngpVUN8rw-OiclbTknkO24ef5t6PMZ-QwGFQIh5PjWcTkRWRqiArp9SKhbk_72aCzxcRrIWOc5i_dAWPhJ0_cw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/Filter_breaker"><span dir="auto">Filter breaker - فیلترشکن</span></a></div>
+
+
+<div class="tgme_widget_message_text js-message_text" dir="auto">کانفیگ کمکی جهت اتصال:<br/>حجم محدود و موقت<br/><pre>ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpmOGY3YUN6Y1BLYnNGOHAz@188.214.36.155:990#@Filter_breaker<br/>vless://30f2d443-af46-4dd6-83c9-b5e17299ebd2@104.26.14.69:443?security=tls&amp;sni=carlotta.shoorekeeper.cloudns.org&amp;fp=chrome&amp;type=ws&amp;path=/&amp;host=carlotta.shoorekeeper.cloudns.org&amp;packetEncoding=xudp&amp;encryption=none#@Filter_breaker<br/>vless://8df60790-c903-4661-b85d-64c0009378e5@104.25.227.244:443?security=tls&amp;sni=F1.paRsa.fiLegEar-Sg.Me&amp;type=ws&amp;path=/?ed%3D2560&amp;host=f1.parsa.filegear-sg.me&amp;packetEncoding=xudp&amp;encryption=none#@Filter_breaker<br/>vless://8df60790-c903-4661-b85d-64c0009378e5@188.114.96.6:443?security=tls&amp;sni=F1.paRsa.fiLegEar-Sg.Me&amp;type=ws&amp;path=/Tel-@V2ray_Alpha/?ed%3D2560&amp;host=F1.paRsa.fiLegEar-Sg.Me&amp;packetEncoding=xudp&amp;encryption=none#@Filter_breaker<br/>vless://b55ec078-3b17-4ed1-a697-71f464cdcaaa@101reel.com:443?security=tls&amp;sni=barayeiranmahsang.sabzipolobamahi.dpdns.org&amp;fp=chrome&amp;type=ws&amp;path=/?ed&amp;host=barayeiranmahsang.sabzipolobamahi.dpdns.org&amp;packetEncoding=xudp&amp;encryption=none#@Filter_breaker</pre><br/><a href="https://t.me/Filter_breaker" target="_blank">@Filter_breaker</a></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">297</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/Filter_breaker/768"><time datetime="2025-08-02T12:48:28+00:00" class="time">12:48</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="Filter_breaker/769" data-view="eyJjIjotMTg0ODM3MjI1OCwicCI6NzY5LCJ0IjoxNzU0MjI0MTA4LCJoIjoiMDMwZGE5MGNmNWQ4NzIxNmI1In0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/Filter_breaker"><i class="tgme_widget_message_user_photo bgcolor5" data-content="F"><img src="https://cdn4.telegram.space/file/ULfFfAygmsAdCUKlXdrj6D8QYm8yq7LX6AqEHtU-N_1CxZOx_kZcw5Bn-DZC09v1MntFw-C_dsxukNHGIPlyY8M0ZOXXuZoknyP5zvTV4_zwMczaC4AJKFIz39_3lZVEJNSUJDsaWoOJ1JmQ8MsSgbLy5Cur5aqnMvu5JJH5TErifcde-ud7IwAHb_WI_C8RqWERGJboKyqjp9rWcd3_YKdXuaZPoTgzgyaU5dn-RTmbd7d0WiD4xXBc9sx8V_8BngpVUN8rw-OiclbTknkO24ef5t6PMZ-QwGFQIh5PjWcTkRWRqiArp9SKhbk_72aCzxcRrIWOc5i_dAWPhJ0_cw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/Filter_breaker"><span dir="auto">Filter breaker - فیلترشکن</span></a></div>
+
+
+<div class="tgme_widget_message_text js-message_text" dir="auto">کانفیگ کمکی جهت اتصال:<br/>حجم محدود و موقت<br/><pre>ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpMTVNOaDIxVHJYalIyb2syNVEybkU4RU5UMnpvQm1QdmthM1JDQ1VBSFpFTENuV29la1ZqdmFmODlxd2NSa2RieEVmZXAyYmMyYVV0bW54cXZGMWF5UVJlejFKSGpVTGo=@141.98.4.67:52952#@Filter_breaker<br/>trojan://f282b878-8711-45a1-8c69-5564172123c1@104.21.72.109:443?security=tls&amp;sni=vpn.stupidworld.web.id&amp;type=ws&amp;path=/Stupid-World/103.106.228.126-2053&amp;host=vpn.stupidworld.web.id#@Filter_breaker<br/>vless://c98a16e4-0dc5-42f0-b3db-30f04525c123@104.18.86.131:443?security=tls&amp;sni=vless5-edu.pages.dev&amp;alpn=h3&amp;type=ws&amp;path=/?ed&amp;host=vless5-edu.pages.dev&amp;packetEncoding=xudp&amp;encryption=none#@Filter_breaker<br/>vless://30f2d443-af46-4dd6-83c9-b5e17299ebd2@104.26.15.69:2096?security=tls&amp;sni=carlotta.shoorekeeper.cloudns.org&amp;fp=chrome&amp;type=ws&amp;path=/&amp;host=carlotta.shoorekeeper.cloudns.org&amp;packetEncoding=xudp&amp;encryption=none#@Filter_breaker<br/>vless://7094df26-af60-41c4-afac-857060d1bab0@jealous-competition.seotoolsforyou.co.uk:80?security=none&amp;type=ws&amp;path=/&amp;packetEncoding=xudp&amp;encryption=none#@Filter_breaker</pre><br/><a href="https://t.me/Filter_breaker" target="_blank">@Filter_breaker</a></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">178</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/Filter_breaker/769"><time datetime="2025-08-02T17:36:31+00:00" class="time">17:36</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="Filter_breaker/770" data-view="eyJjIjotMTg0ODM3MjI1OCwicCI6NzcwLCJ0IjoxNzU0MjI0MTA4LCJoIjoiNzhiNGZkNWM3Yzg0YmZmYzE3In0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/Filter_breaker"><i class="tgme_widget_message_user_photo bgcolor5" data-content="F"><img src="https://cdn4.telegram.space/file/ULfFfAygmsAdCUKlXdrj6D8QYm8yq7LX6AqEHtU-N_1CxZOx_kZcw5Bn-DZC09v1MntFw-C_dsxukNHGIPlyY8M0ZOXXuZoknyP5zvTV4_zwMczaC4AJKFIz39_3lZVEJNSUJDsaWoOJ1JmQ8MsSgbLy5Cur5aqnMvu5JJH5TErifcde-ud7IwAHb_WI_C8RqWERGJboKyqjp9rWcd3_YKdXuaZPoTgzgyaU5dn-RTmbd7d0WiD4xXBc9sx8V_8BngpVUN8rw-OiclbTknkO24ef5t6PMZ-QwGFQIh5PjWcTkRWRqiArp9SKhbk_72aCzxcRrIWOc5i_dAWPhJ0_cw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/Filter_breaker"><span dir="auto">Filter breaker - فیلترشکن</span></a></div>
+
+
+<div class="tgme_widget_message_text js-message_text" dir="auto">کانفیگ کمکی جهت اتصال:<br/>حجم محدود و موقت<br/><pre>vless://30f2d443-af46-4dd6-83c9-b5e17299ebd2@104.21.67.12:443?security=tls&amp;sni=carlotta.shoorekeeper.cloudns.org&amp;alpn=http/1.1&amp;fp=chrome&amp;type=ws&amp;path=/proxyip%3Dzani.yaemiko.ggff.net&amp;host=carlotta.shoorekeeper.cloudns.org&amp;packetEncoding=xudp&amp;encryption=none#@Filter_breaker<br/>trojan://f282b878-8711-45a1-8c69-5564172123c1@172.67.181.173:443?security=tls&amp;sni=vpn.stupidworld.web.id&amp;fp=chrome&amp;type=ws&amp;path=/Stupid-World/103.106.228.126-2053&amp;host=vpn.stupidworld.web.id#@Filter_breaker<br/>vless://30f2d443-af46-4dd6-83c9-b5e17299ebd2@160.153.0.32:443?security=tls&amp;sni=carlotta.shoorekeeper.cloudns.org&amp;alpn=http/1.1&amp;fp=randomized&amp;type=ws&amp;path=/proxyip%3Dzani.yaemiko.ggff.net&amp;host=carlotta.shoorekeeper.cloudns.org&amp;packetEncoding=xudp&amp;encryption=none#@Filter_breaker<br/>vless://30f2d443-af46-4dd6-83c9-b5e17299ebd2@104.26.14.69:2096?security=tls&amp;sni=carlotta.shoorekeeper.cloudns.org&amp;alpn=http/1.1&amp;fp=chrome&amp;type=ws&amp;path=/&amp;host=carlotta.shoorekeeper.cloudns.org&amp;packetEncoding=xudp&amp;encryption=none#@Filter_breaker<br/>trojan://2ee85121-31de-4581-a492-eb00f606e392@198.23.229.250:443?security=tls&amp;sni=rc6.freeguard.org&amp;type=tcp#@Filter_breaker</pre><br/><a href="https://t.me/Filter_breaker" target="_blank">@Filter_breaker</a></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">210</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/Filter_breaker/770"><time datetime="2025-08-02T17:38:29+00:00" class="time">17:38</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="Filter_breaker/771" data-view="eyJjIjotMTg0ODM3MjI1OCwicCI6NzcxLCJ0IjoxNzU0MjI0MTA4LCJoIjoiZWNjYzZlZGNiYzI1MmI2ODMxIn0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/Filter_breaker"><i class="tgme_widget_message_user_photo bgcolor5" data-content="F"><img src="https://cdn4.telegram.space/file/ULfFfAygmsAdCUKlXdrj6D8QYm8yq7LX6AqEHtU-N_1CxZOx_kZcw5Bn-DZC09v1MntFw-C_dsxukNHGIPlyY8M0ZOXXuZoknyP5zvTV4_zwMczaC4AJKFIz39_3lZVEJNSUJDsaWoOJ1JmQ8MsSgbLy5Cur5aqnMvu5JJH5TErifcde-ud7IwAHb_WI_C8RqWERGJboKyqjp9rWcd3_YKdXuaZPoTgzgyaU5dn-RTmbd7d0WiD4xXBc9sx8V_8BngpVUN8rw-OiclbTknkO24ef5t6PMZ-QwGFQIh5PjWcTkRWRqiArp9SKhbk_72aCzxcRrIWOc5i_dAWPhJ0_cw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/Filter_breaker"><span dir="auto">Filter breaker - فیلترشکن</span></a></div>
+
+
+<div class="tgme_widget_message_text js-message_text" dir="auto">کانفیگ کمکی جهت اتصال:<br/>حجم محدود و موقت<br/><pre>vmess://67e010ae-0df0-40d7-893d-32cd0f8657f4@104.21.96.1:443?encryption=auto&amp;security=tls&amp;sni=ddDDdddcVfFfG.999161.Xyz&amp;fp=&amp;type=ws&amp;path=/sz6hlcaoUZUxYikAUO&amp;host=dddddddcvfffg.999161.xyz#@Filter_breaker<br/>vless://67e010ae-0df0-40d7-893d-32cd0f8657f4@104.21.64.1:443?security=tls&amp;sni=ddDcVf.999161.XYZ&amp;alpn=http/1.1&amp;allowInsecure=1&amp;fp=chrome&amp;type=ws&amp;path=/NuXEb47YbDQtnaUxYikAUO&amp;host=dddcvf.999161.xyz&amp;packetEncoding=xudp&amp;encryption=none#@Filter_breaker<br/>trojan://67e010ae-0df0-40d7-893d-32cd0f8657f4@104.21.48.1:443?security=tls&amp;sni=DddDDdDCvfFFg.999161.xyZ&amp;alpn=h2&amp;allowInsecure=1&amp;fp=chrome&amp;type=grpc&amp;serviceName=d5CDLD8wfP15qxayLw#@Filter_breaker<br/>trojan://67e010ae-0df0-40d7-893d-32cd0f8657f4@104.21.80.1:443?security=tls&amp;sni=DddDdDDcVfFfg.999161.xYZ&amp;alpn=http/1.1&amp;allowInsecure=1&amp;fp=chrome&amp;type=ws&amp;path=/d5CDLD8wfP1UxYikAUO&amp;host=dddddddcvfffg.999161.xyz#@Filter_breaker<br/>vmess://67e010ae-0df0-40d7-893d-32cd0f8657f4@104.21.48.1:443?encryption=auto&amp;security=tls&amp;sni=dDddddDCvfffg.999161.xYZ&amp;fp=&amp;type=httpupgrade&amp;path=/sz6hlcaoUZd4Pbdwl&amp;host=dddddddcvfffg.999161.xyz#@Filter_breaker</pre><br/><a href="https://t.me/Filter_breaker" target="_blank">@Filter_breaker</a></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">199</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/Filter_breaker/771"><time datetime="2025-08-02T17:39:43+00:00" class="time">17:39</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="Filter_breaker/772" data-view="eyJjIjotMTg0ODM3MjI1OCwicCI6NzcyLCJ0IjoxNzU0MjI0MTA4LCJoIjoiMjdjZWU0NmQ2ZmRkMDFkZmRjIn0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/Filter_breaker"><i class="tgme_widget_message_user_photo bgcolor5" data-content="F"><img src="https://cdn4.telegram.space/file/ULfFfAygmsAdCUKlXdrj6D8QYm8yq7LX6AqEHtU-N_1CxZOx_kZcw5Bn-DZC09v1MntFw-C_dsxukNHGIPlyY8M0ZOXXuZoknyP5zvTV4_zwMczaC4AJKFIz39_3lZVEJNSUJDsaWoOJ1JmQ8MsSgbLy5Cur5aqnMvu5JJH5TErifcde-ud7IwAHb_WI_C8RqWERGJboKyqjp9rWcd3_YKdXuaZPoTgzgyaU5dn-RTmbd7d0WiD4xXBc9sx8V_8BngpVUN8rw-OiclbTknkO24ef5t6PMZ-QwGFQIh5PjWcTkRWRqiArp9SKhbk_72aCzxcRrIWOc5i_dAWPhJ0_cw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/Filter_breaker"><span dir="auto">Filter breaker - فیلترشکن</span></a></div>
+
+
+<div class="tgme_widget_message_text js-message_text" dir="auto">کانفیگ کمکی جهت اتصال:<br/>حجم محدود و موقت<br/><pre>vmess://67e010ae-0df0-40d7-893d-32cd0f8657f4@104.21.16.1:443?encryption=auto&amp;security=tls&amp;sni=DDDCVf.999161.xyZ&amp;fp=&amp;type=ws&amp;path=/sz6hlcaoUZUxYikAUO&amp;host=dddcvf.999161.xyz#@Filter_breaker<br/>vmess://67e010ae-0df0-40d7-893d-32cd0f8657f4@104.21.96.1:443?encryption=auto&amp;security=tls&amp;sni=SSSx.999161.xYZ&amp;fp=&amp;type=grpc&amp;serviceName=sz6hlcaoUZ5qxayLw#@Filter_breaker<br/>vless://67e010ae-0df0-40d7-893d-32cd0f8657f4@104.21.48.1:443?security=tls&amp;sni=DDdCVF.999161.xYZ&amp;alpn=h2&amp;allowInsecure=1&amp;fp=chrome&amp;type=grpc&amp;serviceName=NuXEb47YbDQtna5qxayLw&amp;packetEncoding=xudp&amp;encryption=none#@Filter_breaker<br/>vmess://67e010ae-0df0-40d7-893d-32cd0f8657f4@104.21.96.1:443?encryption=auto&amp;security=tls&amp;sni=DddcvF.999161.xyZ&amp;fp=&amp;type=grpc&amp;serviceName=sz6hlcaoUZ5qxayLw#@Filter_breaker<br/>vless://67e010ae-0df0-40d7-893d-32cd0f8657f4@104.21.112.1:443?security=tls&amp;sni=dddcvF.999161.XYz&amp;alpn=http/1.1&amp;allowInsecure=1&amp;fp=chrome&amp;type=httpupgrade&amp;path=/NuXEb47YbDQtnad4Pbdwl&amp;host=dddcvf.999161.xyz&amp;packetEncoding=xudp&amp;encryption=none#@Filter_breaker</pre><br/><a href="https://t.me/Filter_breaker" target="_blank">@Filter_breaker</a></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">213</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/Filter_breaker/772"><time datetime="2025-08-02T17:41:35+00:00" class="time">17:41</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="Filter_breaker/773" data-view="eyJjIjotMTg0ODM3MjI1OCwicCI6NzczLCJ0IjoxNzU0MjI0MTA4LCJoIjoiNTRmMjMyM2UxYjg0ZWZiOTBjIn0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/Filter_breaker"><i class="tgme_widget_message_user_photo bgcolor5" data-content="F"><img src="https://cdn4.telegram.space/file/ULfFfAygmsAdCUKlXdrj6D8QYm8yq7LX6AqEHtU-N_1CxZOx_kZcw5Bn-DZC09v1MntFw-C_dsxukNHGIPlyY8M0ZOXXuZoknyP5zvTV4_zwMczaC4AJKFIz39_3lZVEJNSUJDsaWoOJ1JmQ8MsSgbLy5Cur5aqnMvu5JJH5TErifcde-ud7IwAHb_WI_C8RqWERGJboKyqjp9rWcd3_YKdXuaZPoTgzgyaU5dn-RTmbd7d0WiD4xXBc9sx8V_8BngpVUN8rw-OiclbTknkO24ef5t6PMZ-QwGFQIh5PjWcTkRWRqiArp9SKhbk_72aCzxcRrIWOc5i_dAWPhJ0_cw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/Filter_breaker"><span dir="auto">Filter breaker - فیلترشکن</span></a></div>
+
+
+<div class="tgme_widget_message_text js-message_text" dir="auto">کانفیگ کمکی جهت اتصال:<br/>حجم محدود و موقت<br/><pre>vless://67e010ae-0df0-40d7-893d-32cd0f8657f4@104.21.16.1:443?security=tls&amp;sni=SsSX.999161.xYz&amp;alpn=h2&amp;allowInsecure=1&amp;fp=chrome&amp;type=grpc&amp;serviceName=NuXEb47YbDQtna5qxayLw&amp;packetEncoding=xudp&amp;encryption=none#@Filter_breaker<br/>vmess://67e010ae-0df0-40d7-893d-32cd0f8657f4@104.21.48.1:443?encryption=auto&amp;security=tls&amp;sni=DDddDddcVffFg.999161.xyZ&amp;fp=&amp;type=grpc&amp;serviceName=sz6hlcaoUZ5qxayLw#@Filter_breaker<br/>trojan://67e010ae-0df0-40d7-893d-32cd0f8657f4@104.21.112.1:443?security=tls&amp;sni=SsSx.999161.Xyz&amp;alpn=http/1.1&amp;allowInsecure=1&amp;fp=chrome&amp;type=ws&amp;path=/d5CDLD8wfP1UxYikAUO&amp;host=sssx.999161.xyz#@Filter_breaker<br/>hy2://707ea935-924c-4127-8b6d-8c0ccf5eabd1@dehub.xg-hub.icu:25784?obfs=salamander&amp;obfs-password=ZDQxZDhjZDk4ZjAwYjIwNA%3D%3D&amp;insecure=1&amp;sni=dehub.xg-hub.icu#@Filter_breaker</pre><br/><a href="https://t.me/Filter_breaker" target="_blank">@Filter_breaker</a></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">246</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/Filter_breaker/773"><time datetime="2025-08-02T17:43:27+00:00" class="time">17:43</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="Filter_breaker/774" data-view="eyJjIjotMTg0ODM3MjI1OCwicCI6Nzc0LCJ0IjoxNzU0MjI0MTA4LCJoIjoiMjUxOGE3OTRiZGE0NjI3YzE3In0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/Filter_breaker"><i class="tgme_widget_message_user_photo bgcolor5" data-content="F"><img src="https://cdn4.telegram.space/file/ULfFfAygmsAdCUKlXdrj6D8QYm8yq7LX6AqEHtU-N_1CxZOx_kZcw5Bn-DZC09v1MntFw-C_dsxukNHGIPlyY8M0ZOXXuZoknyP5zvTV4_zwMczaC4AJKFIz39_3lZVEJNSUJDsaWoOJ1JmQ8MsSgbLy5Cur5aqnMvu5JJH5TErifcde-ud7IwAHb_WI_C8RqWERGJboKyqjp9rWcd3_YKdXuaZPoTgzgyaU5dn-RTmbd7d0WiD4xXBc9sx8V_8BngpVUN8rw-OiclbTknkO24ef5t6PMZ-QwGFQIh5PjWcTkRWRqiArp9SKhbk_72aCzxcRrIWOc5i_dAWPhJ0_cw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/Filter_breaker"><span dir="auto">Filter breaker - فیلترشکن</span></a></div>
+<div class="tgme_widget_message_forwarded_from accent_color">Forwarded from&nbsp;<a class="tgme_widget_message_forwarded_from_name" href="https://t.me/Filter_breaker/759"><span dir="auto">Filter breaker - فیلترشکن</span></a></div>
+
+<div class="tgme_widget_message_text js-message_text" dir="auto">دوستان عزیز،  <br/>کانفیگ‌ها و سابلینک‌های رایگان رو براتون با کلی عشق آماده می‌کنم&#33; <i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F988A.png')"><b>😊</b></i> اگه براتون مفید بود و دوست داشتید حمایت کنید، می‌تونید هر مبلغی که مایلید به آدرس ترون زیر دونیت کنید. کاملاً اختیاریه و فقط باعث دلگرمی من برای ادامه کاره&#33; <i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9299.png')"><b>💙</b></i>  <br/><br/>TRON Address:   <code>TX3gM3mkC3u5dpQBL9YEaKYGu2WGi5YtdJ</code><br/><br/>*نکته: می‌تونید از ولت‌هایی مثل ترون‌لینک یا تراست‌ولت برای دونیت استفاده کنید.*  <br/>ممنون از همراهیتون&#33; <i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F998F.png')"><b>🙏</b></i><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29CA8.png')"><b>✨</b></i><br/><br/>پ.ن: حمایت شما از این کانال که برای خودتون هست روی فعالیت کانال تاثیر مستقیم میزاره ، اشتراک ها به خصوص در آینده میزاریم در کانال که دیگ دغدغه ایی نداشته باشین مدام برای کانفیگ وقت بزارین و بگردین  ،  همه چی اتومات تر میشه  ،  خلاصه خیلی کارها قراره بکنم و خب استقبال بشه منم به قولم عمل میکنم باز هم میگم اختیاری هست هیچ اجباری نیس و روی فعالیت فعلی کانال تاثیری نداره چه دونیت بکنین چه نکنین در حد توان باز هم درخدمتتون هستیم<i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F8CB9.png')"><b>🌹</b></i></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F998F.png')"><b>🙏</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">36</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/Filter_breaker/774"><time datetime="2025-08-02T17:44:05+00:00" class="time">17:44</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="Filter_breaker/775" data-view="eyJjIjotMTg0ODM3MjI1OCwicCI6Nzc1LCJ0IjoxNzU0MjI0MTA4LCJoIjoiNDVjMzNiY2RmMzNlMThjODBkIn0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/Filter_breaker"><i class="tgme_widget_message_user_photo bgcolor5" data-content="F"><img src="https://cdn4.telegram.space/file/ULfFfAygmsAdCUKlXdrj6D8QYm8yq7LX6AqEHtU-N_1CxZOx_kZcw5Bn-DZC09v1MntFw-C_dsxukNHGIPlyY8M0ZOXXuZoknyP5zvTV4_zwMczaC4AJKFIz39_3lZVEJNSUJDsaWoOJ1JmQ8MsSgbLy5Cur5aqnMvu5JJH5TErifcde-ud7IwAHb_WI_C8RqWERGJboKyqjp9rWcd3_YKdXuaZPoTgzgyaU5dn-RTmbd7d0WiD4xXBc9sx8V_8BngpVUN8rw-OiclbTknkO24ef5t6PMZ-QwGFQIh5PjWcTkRWRqiArp9SKhbk_72aCzxcRrIWOc5i_dAWPhJ0_cw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/Filter_breaker"><span dir="auto">Filter breaker - فیلترشکن</span></a></div>
+<div class="tgme_widget_message_forwarded_from accent_color">Forwarded from&nbsp;<a class="tgme_widget_message_forwarded_from_name" href="https://t.me/Filter_breaker/678"><span dir="auto">Filter breaker - فیلترشکن</span></a></div>
+
+<div class="tgme_widget_message_text js-message_text" dir="auto">سابلینک های اختصاصی  :<br/><br/><pre>https://raw.githubusercontent.com/senatorpersian/Filter_breaker1/refs/heads/main/%40Filter_breaker.json</pre><br/><pre>https://raw.githubusercontent.com/senatorpersian/Filter_breaker2/refs/heads/main/%40Filter_breaker-sub.txt</pre><br/><pre>https://raw.githubusercontent.com/senatorpersian/Filter_breaker3/refs/heads/main/%40Filter_breaker-sub.txt</pre><br/><pre>https://raw.githubusercontent.com/senatorpersian/Filter_breaker4/refs/heads/main/Unlimited-%40Filter_breaker</pre><br/><pre>https://raw.githubusercontent.com/senatorpersian/Filter_breaker5/refs/heads/main/%40Filter_breaker-sub</pre><br/><pre>https://raw.githubusercontent.com/senatorpersian/Filter_breaker/refs/heads/main/sub.txt</pre><br/><br/><a href="https://t.me/Filter_breaker" target="_blank">@Filter_breaker</a></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">15</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/Filter_breaker/775"><time datetime="2025-08-02T17:44:35+00:00" class="time">17:44</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="Filter_breaker/776" data-view="eyJjIjotMTg0ODM3MjI1OCwicCI6Nzc2LCJ0IjoxNzU0MjI0MTA4LCJoIjoiMmI2MDQxODBkMWQxMWY3YTk3In0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/Filter_breaker"><i class="tgme_widget_message_user_photo bgcolor5" data-content="F"><img src="https://cdn4.telegram.space/file/ULfFfAygmsAdCUKlXdrj6D8QYm8yq7LX6AqEHtU-N_1CxZOx_kZcw5Bn-DZC09v1MntFw-C_dsxukNHGIPlyY8M0ZOXXuZoknyP5zvTV4_zwMczaC4AJKFIz39_3lZVEJNSUJDsaWoOJ1JmQ8MsSgbLy5Cur5aqnMvu5JJH5TErifcde-ud7IwAHb_WI_C8RqWERGJboKyqjp9rWcd3_YKdXuaZPoTgzgyaU5dn-RTmbd7d0WiD4xXBc9sx8V_8BngpVUN8rw-OiclbTknkO24ef5t6PMZ-QwGFQIh5PjWcTkRWRqiArp9SKhbk_72aCzxcRrIWOc5i_dAWPhJ0_cw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/Filter_breaker"><span dir="auto">Filter breaker - فیلترشکن</span></a></div>
+
+
+<div class="tgme_widget_message_text js-message_text" dir="auto">کانفیگ کمکی جهت اتصال:<br/>حجم محدود و موقت<br/><pre>vless://ff92925c-f6b7-4b0a-b1dd-30d0df12ef0b@ita01-vlr01.tcp-reset-club.net:443?security=reality&amp;sni=hls-svod.itunes.apple.com&amp;fp=chrome&amp;pbk=mLmBhbVFfNuo2eUgBh6r9-5Koz9mUCn3aSzlR6IejUg&amp;sid=175d&amp;type=tcp&amp;flow=xtls-rprx-vision&amp;packetEncoding=xudp&amp;encryption=none#%F0%9F%87%AE%F0%9F%87%B9%20@Filter_breaker<br/>vless://ff92925c-f6b7-4b0a-b1dd-30d0df12ef0b@tr01-vlr01.tcp-reset-club.net:443?security=reality&amp;sni=hls-svod.itunes.apple.com&amp;fp=chrome&amp;pbk=mLmBhbVFfNuo2eUgBh6r9-5Koz9mUCn3aSzlR6IejUg&amp;sid=86e999a2cdc2&amp;type=tcp&amp;flow=xtls-rprx-vision&amp;packetEncoding=xudp&amp;encryption=none#%F0%9F%87%B9%F0%9F%87%B7%20@Filter_breaker<br/>vless://ff92925c-f6b7-4b0a-b1dd-30d0df12ef0b@de01-vlr01.tcp-reset-club.net:443?security=reality&amp;sni=hls-svod.itunes.apple.com&amp;fp=chrome&amp;pbk=mLmBhbVFfNuo2eUgBh6r9-5Koz9mUCn3aSzlR6IejUg&amp;sid=31&amp;type=tcp&amp;flow=xtls-rprx-vision&amp;packetEncoding=xudp&amp;encryption=none#%F0%9F%87%A9%F0%9F%87%AA%20@Filter_breaker<br/>vless://f68c2019-91ee-43b0-803c-e66445f66eba@94.141.123.233:443?security=reality&amp;sni=cdnjs.com&amp;fp=chrome&amp;pbk=vfmqSXTEjdIOgz43eZTNzBRztAvd1U1dDkSz_mnaSk4&amp;sid=fc7a526a7e61ba3b&amp;type=tcp&amp;flow=xtls-rprx-vision&amp;packetEncoding=xudp&amp;encryption=none#%F0%9F%87%A9%F0%9F%87%AA%20@Filter_breaker<br/>vless://ff92925c-f6b7-4b0a-b1dd-30d0df12ef0b@fr01-vlr01.tcp-reset-club.net:443?security=reality&amp;sni=hls-svod.itunes.apple.com&amp;fp=chrome&amp;pbk=mLmBhbVFfNuo2eUgBh6r9-5Koz9mUCn3aSzlR6IejUg&amp;sid=8453e5fd9af927&amp;type=tcp&amp;flow=xtls-rprx-vision&amp;packetEncoding=xudp&amp;encryption=none#%F0%9F%87%AB%F0%9F%87%B7%20@Filter_breaker</pre><br/><a href="https://t.me/Filter_breaker" target="_blank">@Filter_breaker</a></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">175</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/Filter_breaker/776"><time datetime="2025-08-03T07:50:19+00:00" class="time">07:50</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="Filter_breaker/777" data-view="eyJjIjotMTg0ODM3MjI1OCwicCI6Nzc3LCJ0IjoxNzU0MjI0MTA4LCJoIjoiNTk2NjU4MzdlODRjMWQ2MDcyIn0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/Filter_breaker"><i class="tgme_widget_message_user_photo bgcolor5" data-content="F"><img src="https://cdn4.telegram.space/file/ULfFfAygmsAdCUKlXdrj6D8QYm8yq7LX6AqEHtU-N_1CxZOx_kZcw5Bn-DZC09v1MntFw-C_dsxukNHGIPlyY8M0ZOXXuZoknyP5zvTV4_zwMczaC4AJKFIz39_3lZVEJNSUJDsaWoOJ1JmQ8MsSgbLy5Cur5aqnMvu5JJH5TErifcde-ud7IwAHb_WI_C8RqWERGJboKyqjp9rWcd3_YKdXuaZPoTgzgyaU5dn-RTmbd7d0WiD4xXBc9sx8V_8BngpVUN8rw-OiclbTknkO24ef5t6PMZ-QwGFQIh5PjWcTkRWRqiArp9SKhbk_72aCzxcRrIWOc5i_dAWPhJ0_cw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/Filter_breaker"><span dir="auto">Filter breaker - فیلترشکن</span></a></div>
+
+
+<div class="tgme_widget_message_text js-message_text" dir="auto">کانفیگ کمکی جهت اتصال:<br/>حجم محدود و موقت<br/><pre>vless://ff92925c-f6b7-4b0a-b1dd-30d0df12ef0b@ind01-vlr01.tcp-reset-club.net:443?security=reality&amp;sni=hls-svod.itunes.apple.com&amp;fp=chrome&amp;pbk=mLmBhbVFfNuo2eUgBh6r9-5Koz9mUCn3aSzlR6IejUg&amp;sid=e499f276e7bd6420&amp;type=tcp&amp;flow=xtls-rprx-vision&amp;packetEncoding=xudp&amp;encryption=none#%F0%9F%87%AE%F0%9F%87%B3@Filter_breaker<br/>vless://ff92925c-f6b7-4b0a-b1dd-30d0df12ef0b@ru01-vlr01.tcp-reset-club.net:443?security=reality&amp;sni=hls-svod.itunes.apple.com&amp;fp=chrome&amp;pbk=mLmBhbVFfNuo2eUgBh6r9-5Koz9mUCn3aSzlR6IejUg&amp;sid=8453e5fd9af927&amp;type=tcp&amp;flow=xtls-rprx-vision&amp;packetEncoding=xudp&amp;encryption=none#%F0%9F%87%B7%F0%9F%87%BA%20@Filter_breaker<br/>vless://ff92925c-f6b7-4b0a-b1dd-30d0df12ef0b@ru-0017.vpnvezdehod.net:443?security=reality&amp;sni=hls-svod.itunes.apple.com&amp;fp=chrome&amp;pbk=mLmBhbVFfNuo2eUgBh6r9-5Koz9mUCn3aSzlR6IejUg&amp;sid=8453e5fd9af927&amp;type=tcp&amp;flow=xtls-rprx-vision&amp;packetEncoding=xudp&amp;encryption=none#%F0%9F%87%B3%F0%9F%87%B1%20@Filter_breaker<br/>vless://ff92925c-f6b7-4b0a-b1dd-30d0df12ef0b@gb02-vlr01.tcp-reset-club.net:443?security=reality&amp;sni=hls-svod.itunes.apple.com&amp;fp=chrome&amp;pbk=mLmBhbVFfNuo2eUgBh6r9-5Koz9mUCn3aSzlR6IejUg&amp;sid=48720c&amp;type=tcp&amp;flow=xtls-rprx-vision&amp;packetEncoding=xudp&amp;encryption=none#%F0%9F%87%BA%F0%9F%87%B8%20@Filter_breaker<br/>vless://ff92925c-f6b7-4b0a-b1dd-30d0df12ef0b@us01-vlr01.tcp-reset-club.net:443?security=reality&amp;sni=hls-svod.itunes.apple.com&amp;fp=chrome&amp;pbk=mLmBhbVFfNuo2eUgBh6r9-5Koz9mUCn3aSzlR6IejUg&amp;sid=f79448a30d&amp;type=tcp&amp;flow=xtls-rprx-vision&amp;packetEncoding=xudp&amp;encryption=none#%F0%9F%87%BA%F0%9F%87%B8%20@Filter_breaker</pre><br/><a href="https://t.me/Filter_breaker" target="_blank">@Filter_breaker</a></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">190</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/Filter_breaker/777"><time datetime="2025-08-03T07:53:21+00:00" class="time">07:53</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="Filter_breaker/778" data-view="eyJjIjotMTg0ODM3MjI1OCwicCI6Nzc4LCJ0IjoxNzU0MjI0MTA4LCJoIjoiMWFjNTE0Zjc1NjAyNmQyYTdjIn0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/Filter_breaker"><i class="tgme_widget_message_user_photo bgcolor5" data-content="F"><img src="https://cdn4.telegram.space/file/ULfFfAygmsAdCUKlXdrj6D8QYm8yq7LX6AqEHtU-N_1CxZOx_kZcw5Bn-DZC09v1MntFw-C_dsxukNHGIPlyY8M0ZOXXuZoknyP5zvTV4_zwMczaC4AJKFIz39_3lZVEJNSUJDsaWoOJ1JmQ8MsSgbLy5Cur5aqnMvu5JJH5TErifcde-ud7IwAHb_WI_C8RqWERGJboKyqjp9rWcd3_YKdXuaZPoTgzgyaU5dn-RTmbd7d0WiD4xXBc9sx8V_8BngpVUN8rw-OiclbTknkO24ef5t6PMZ-QwGFQIh5PjWcTkRWRqiArp9SKhbk_72aCzxcRrIWOc5i_dAWPhJ0_cw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/Filter_breaker"><span dir="auto">Filter breaker - فیلترشکن</span></a></div>
+
+
+<div class="tgme_widget_message_text js-message_text" dir="auto">کانفیگ کمکی جهت اتصال:<br/>حجم محدود و موقت<br/><pre>vless://82488ab1-59e0-42fb-959e-ec90ec2f3165@167.172.186.211:443?security=tls&amp;sni=zula.ir&amp;allowInsecure=1&amp;fp=chrome&amp;type=ws&amp;path=/ws&amp;host=167.172.186.211&amp;packetEncoding=xudp&amp;encryption=none#@Filter_breaker<br/>vless://11296c5f-93b7-5655-8704-f6d82e33d9f3@194.147.34.72:443?security=tls&amp;sni=zula.ir&amp;allowInsecure=1&amp;fp=chrome&amp;type=ws&amp;path=/vless&amp;host=194.147.34.72&amp;packetEncoding=xudp&amp;encryption=none#@Filter_breaker<br/>vless://3a1130d2-be97-4849-b22f-30efd55a4c6a@51.195.202.129:443?security=tls&amp;sni=zula.ir&amp;allowInsecure=1&amp;fp=chrome&amp;type=ws&amp;path=/ws&amp;host=51.195.202.129&amp;packetEncoding=xudp&amp;encryption=none#@Filter_breaker<br/>vless://117a6f94-26ca-5879-8b3d-e45c5f14cee7@41.216.182.162:443?security=tls&amp;sni=zula.ir&amp;allowInsecure=1&amp;fp=chrome&amp;type=ws&amp;path=/vless&amp;host=41.216.182.162&amp;packetEncoding=xudp&amp;encryption=none#@Filter_breaker<br/>vless://82488ab1-59e0-42fb-959e-ec90ec2f3165@167.172.186.211:443?security=tls&amp;sni=zula.ir&amp;allowInsecure=1&amp;fp=chrome&amp;type=ws&amp;path=/ws&amp;host=167.172.186.211&amp;packetEncoding=xudp&amp;encryption=none#@Filter_breaker</pre><br/><a href="https://t.me/Filter_breaker" target="_blank">@Filter_breaker</a></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">203</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/Filter_breaker/778"><time datetime="2025-08-03T07:59:57+00:00" class="time">07:59</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="Filter_breaker/779" data-view="eyJjIjotMTg0ODM3MjI1OCwicCI6Nzc5LCJ0IjoxNzU0MjI0MTA4LCJoIjoiY2VhNTAwOWMyOWEyYTM1YjdmIn0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/Filter_breaker"><i class="tgme_widget_message_user_photo bgcolor5" data-content="F"><img src="https://cdn4.telegram.space/file/ULfFfAygmsAdCUKlXdrj6D8QYm8yq7LX6AqEHtU-N_1CxZOx_kZcw5Bn-DZC09v1MntFw-C_dsxukNHGIPlyY8M0ZOXXuZoknyP5zvTV4_zwMczaC4AJKFIz39_3lZVEJNSUJDsaWoOJ1JmQ8MsSgbLy5Cur5aqnMvu5JJH5TErifcde-ud7IwAHb_WI_C8RqWERGJboKyqjp9rWcd3_YKdXuaZPoTgzgyaU5dn-RTmbd7d0WiD4xXBc9sx8V_8BngpVUN8rw-OiclbTknkO24ef5t6PMZ-QwGFQIh5PjWcTkRWRqiArp9SKhbk_72aCzxcRrIWOc5i_dAWPhJ0_cw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/Filter_breaker"><span dir="auto">Filter breaker - فیلترشکن</span></a></div>
+
+
+<div class="tgme_widget_message_text js-message_text" dir="auto">کانفیگ کمکی جهت اتصال:<br/>حجم محدود و موقت<br/><pre>vless://110ac6e9-f62b-5bd3-9d74-adbb4ec62f65@www.speedtest.net:443?security=tls&amp;sni=nl-1-ssm.medicaldream.ir&amp;allowInsecure=1&amp;fp=chrome&amp;type=ws&amp;path=/vless&amp;host=nl-1-ssm.medicaldream.ir&amp;packetEncoding=xudp&amp;encryption=none#@Filter_breaker<br/>vless://82db5ebc-7f11-5009-831b-9e9c5b5a22af@www.speedtest.net:443?security=tls&amp;sni=ee-1-ssm.medicaldream.ir&amp;allowInsecure=1&amp;fp=chrome&amp;type=ws&amp;path=/vless&amp;host=ee-1-ssm.medicaldream.ir&amp;packetEncoding=xudp&amp;encryption=none#@Filter_breaker<br/>vless://3a1130d2-be97-4849-b22f-30efd55a4c6a@51.195.202.129:443?security=tls&amp;sni=zula.ir&amp;allowInsecure=1&amp;fp=chrome&amp;type=ws&amp;path=/ws&amp;host=51.195.202.129&amp;packetEncoding=xudp&amp;encryption=none#@Filter_breaker<br/>vless://11296c5f-93b7-5655-8704-f6d82e33d9f3@www.speedtest.net:443?security=tls&amp;sni=pl-1-ssm.medicaldream.ir&amp;allowInsecure=1&amp;fp=chrome&amp;type=ws&amp;path=/vless&amp;host=pl-1-ssm.medicaldream.ir&amp;packetEncoding=xudp&amp;encryption=none#@Filter_breaker<br/>vless://4fd1660f-273e-4b4a-a51e-de26bd541347@51.195.101.222:443?security=tls&amp;sni=zula.ir&amp;allowInsecure=1&amp;fp=chrome&amp;type=ws&amp;path=/ws&amp;host=51.195.101.222&amp;packetEncoding=xudp&amp;encryption=none#@Filter_breaker</pre><br/><a href="https://t.me/Filter_breaker" target="_blank">@Filter_breaker</a></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">228</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta">edited &nbsp;<a class="tgme_widget_message_date" href="https://t.me/Filter_breaker/779"><time datetime="2025-08-03T08:02:14+00:00" class="time">08:02</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="Filter_breaker/780" data-view="eyJjIjotMTg0ODM3MjI1OCwicCI6NzgwLCJ0IjoxNzU0MjI0MTA4LCJoIjoiZGYxYzYzY2RkOTQ0NWI0MDFlIn0">
+  <div class="tgme_widget_message_user"><a href="https://t.me/Filter_breaker"><i class="tgme_widget_message_user_photo bgcolor5" data-content="F"><img src="https://cdn4.telegram.space/file/ULfFfAygmsAdCUKlXdrj6D8QYm8yq7LX6AqEHtU-N_1CxZOx_kZcw5Bn-DZC09v1MntFw-C_dsxukNHGIPlyY8M0ZOXXuZoknyP5zvTV4_zwMczaC4AJKFIz39_3lZVEJNSUJDsaWoOJ1JmQ8MsSgbLy5Cur5aqnMvu5JJH5TErifcde-ud7IwAHb_WI_C8RqWERGJboKyqjp9rWcd3_YKdXuaZPoTgzgyaU5dn-RTmbd7d0WiD4xXBc9sx8V_8BngpVUN8rw-OiclbTknkO24ef5t6PMZ-QwGFQIh5PjWcTkRWRqiArp9SKhbk_72aCzxcRrIWOc5i_dAWPhJ0_cw.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/Filter_breaker"><span dir="auto">Filter breaker - فیلترشکن</span></a></div>
+
+
+<div class="tgme_widget_message_text js-message_text" dir="auto">کانفیگ کمکی جهت اتصال:<br/>حجم محدود و موقت<br/><pre>vless://affca828-5596-547c-82da-0c0a03239845@www.speedtest.net:443?security=tls&amp;sni=lv-1-ssm.medicaldream.ir&amp;allowInsecure=1&amp;fp=chrome&amp;type=ws&amp;path=/vless&amp;host=lv-1-ssm.medicaldream.ir&amp;packetEncoding=xudp&amp;encryption=none#@Filter_breaker<br/>vless://82db5ebc-7f11-5009-831b-9e9c5b5a22af@185.255.178.188:443?security=tls&amp;sni=zula.ir&amp;allowInsecure=1&amp;fp=chrome&amp;type=ws&amp;path=/vless&amp;host=185.255.178.188&amp;packetEncoding=xudp&amp;encryption=none#@Filter_breaker<br/>vless://117a6f94-26ca-5879-8b3d-e45c5f14cee7@www.speedtest.net:443?security=tls&amp;sni=se-1-ssm.medicaldream.ir&amp;allowInsecure=1&amp;fp=chrome&amp;type=ws&amp;path=/vless&amp;host=se-1-ssm.medicaldream.ir&amp;packetEncoding=xudp&amp;encryption=none#@Filter_breaker<br/>vless://110ac6e9-f62b-5bd3-9d74-adbb4ec62f65@95.215.8.25:443?security=tls&amp;sni=zula.ir&amp;allowInsecure=1&amp;fp=chrome&amp;type=ws&amp;path=/vless&amp;host=95.215.8.25&amp;packetEncoding=xudp&amp;encryption=none#@Filter_breaker<br/>vless://3a1130d2-be97-4849-b22f-30efd55a4c6a@51.195.202.129:443?security=tls&amp;sni=zula.ir&amp;allowInsecure=1&amp;fp=chrome&amp;type=ws&amp;path=/ws&amp;host=51.195.202.129&amp;packetEncoding=xudp&amp;encryption=none#@Filter_breaker</pre><br/><a href="https://t.me/Filter_breaker" target="_blank">@Filter_breaker</a></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">309</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/Filter_breaker/780"><time datetime="2025-08-03T08:03:25+00:00" class="time">08:03</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div>
+    </section>
+  </div>
+</main>
+    <script src="//telegram.org/js/jquery.min.js"></script>
+    <script src="//telegram.org/js/jquery-ui.min.js"></script>
+    <script src="//telegram.org/js/tgwallpaper.min.js?3"></script>
+<script src="//telegram.org/js/tgsticker.js?31"></script>
+
+    <script src="//telegram.org/js/widget-frame.js?65"></script>
+    <script src="//telegram.org/js/telegram-web.js?14"></script>
+    <script>TWeb.init();
+</script>
+    
+  </body>
+</html>
+<!-- page generated in 55.93ms -->

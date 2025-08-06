@@ -1,0 +1,70 @@
+{
+    "meta": {
+        "last_updated": "2025-08-03T12:29:20+00:00"
+    },
+    "sources": {
+        "total_from_assets": 423,
+        "had_configs_extracted": 422,
+        "had_valid_configs": 422,
+        "removed_in_cleanup": 1
+    },
+    "configs": {
+        "total_valid": 1071,
+        "breakdown_by_protocol": {
+            "vless": 804,
+            "ss": 117,
+            "trojan": 25,
+            "vmess": 123,
+            "tuic": 2
+        }
+    },
+    "outputs": {
+        "location_files_created": 44,
+        "country_distribution": {
+            "CF": 267,
+            "XX": 190,
+            "DE": 161,
+            "IR": 94,
+            "US": 77,
+            "NL": 53,
+            "GB": 42,
+            "FR": 38,
+            "FI": 28,
+            "SE": 17,
+            "CA": 13,
+            "RU": 11,
+            "TR": 11,
+            "AT": 6,
+            "PL": 6,
+            "AM": 5,
+            "JP": 5,
+            "BR": 3,
+            "IN": 3,
+            "CH": 3,
+            "AE": 3,
+            "OM": 3,
+            "PT": 2,
+            "BE": 2,
+            "CZ": 2,
+            "SG": 2,
+            "AU": 2,
+            "CN": 2,
+            "ID": 2,
+            "HK": 2,
+            "IT": 2,
+            "RO": 2,
+            "UA": 1,
+            "SA": 1,
+            "LV": 1,
+            "CW": 1,
+            "LK": 1,
+            "LT": 1,
+            "CY": 1,
+            "KR": 1,
+            "HU": 1,
+            "UZ": 1,
+            "LU": 1,
+            "NO": 1
+        }
+    }
+}
