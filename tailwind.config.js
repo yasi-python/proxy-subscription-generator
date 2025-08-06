@@ -1,16 +1,1 @@
-module.exports = {
-  content: [
-    "./index.html",
-    "./**/*.php",
-    "./**/*.js"
-  ],
-  theme: {
-    extend: {
-      fontFamily: {
-        sans: ["Inter", "sans-serif"],
-      },
-    },
-  },
-  darkMode: 'class',
-  plugins: [],
-};
+module.exports={content:["./index.html","./**/*.php","./**/*.js"],theme:{extend:{fontFamily:{sans:["Inter","sans-serif"]}}},darkMode:"class",plugins:[]};
