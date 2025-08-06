@@ -7,8 +7,7 @@ on:
     types: [opened, synchronize]
   workflow_dispatch:
   schedule:
-    - cron: "0 * * * *"
-
+    - cron: "0 */2 * * *" 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
@@ -50,10 +49,10 @@ jobs:
         if: always()
         run: |
           echo "🔹 Cleaning workspace..."
-          git fetch origin || echo "⚠️ Fetch failed"
-          git reset --hard || echo "⚠️ Reset failed"
-          git clean -fdx || echo "⚠️ Clean failed"
-          mkdir -p release lite public_html logs || echo "⚠️ Directory creation skipped (already exists)"
+          git fetch origin || echo "⚠️ Fetch failed" >> logs/workspace.log
+          git reset --hard || echo "⚠️ Reset failed" >> logs/workspace.log
+          git clean -fdx || echo "⚠️ Clean failed" >> logs/workspace.log
+          mkdir -p release lite public_html logs || echo "⚠️ Directory creation skipped" >> logs/workspace.log
           echo "✅ Workspace ready"
 
       - name: 📦 Checkout Repository
@@ -84,40 +83,40 @@ jobs:
       - name: 📜 Install Dependencies
         run: |
           echo "📦 Installing Node Dependencies..."
-          npm ci || { echo "⚠️ npm ci failed, falling back to npm install"; npm install; } || exit 1
+          npm ci || { echo "⚠️ npm ci failed" >> logs/deps.log; npm install || exit 1; }
           echo "📦 Installing PHP Dependencies..."
-          composer install --prefer-dist --no-progress || { echo "⚠️ Composer install failed"; composer install --ignore-platform-reqs; } || exit 1
-          composer update --prefer-stable --no-progress || echo "⚠️ Composer update skipped"
+          composer install --prefer-dist --no-progress || { echo "⚠️ Composer failed" >> logs/deps.log; composer install --ignore-platform-reqs || exit 1; }
+          composer update --prefer-stable --no-progress || echo "⚠️ Composer update skipped" >> logs/deps.log
           echo "📦 Installing Python Dependencies..."
-          python -m pip install --upgrade pip setuptools wheel || exit 1
-          pip install -r requirements.txt || exit 1
-          pip install flake8 black || echo "⚠️ Python lint tools skipped"
+          python -m pip install --upgrade pip setuptools wheel || { echo "⚠️ Pip upgrade failed" >> logs/deps.log; exit 1; }
+          pip install -r requirements.txt || { echo "⚠️ Requirements failed" >> logs/deps.log; exit 1; }
+          pip install flake8 black || echo "⚠️ Lint tools skipped" >> logs/deps.log
           echo "✅ Dependencies Installed"
 
       - name: 🔍 Lint & Security Scan
         run: |
           echo "🔍 Running Lint & Security Scan..."
-          npm run lint --if-present || echo "⚠️ Lint skipped"
-          npx auditjs ossi || echo "⚠️ Security scan skipped"
-          find . -type f -name "*.php" -exec php -l {} \; || echo "⚠️ PHP syntax check failed"
-          [ -f "vendor/bin/phpcs" ] && ./vendor/bin/phpcs --standard=PSR12 . || echo "⚠️ PHPCS skipped"
-          [ -f "vendor/bin/psalm" ] && ./vendor/bin/psalm || echo "⚠️ Psalm skipped"
-          flake8 . --max-line-length=120 || echo "⚠️ Python lint skipped"
+          npm run lint --if-present || echo "⚠️ Lint skipped" >> logs/scan.log
+          npx auditjs ossi || echo "⚠️ Security scan skipped" >> logs/scan.log
+          find . -type f -name "*.php" -exec php -l {} \; || echo "⚠️ PHP syntax check failed" >> logs/scan.log
+          [ -f "vendor/bin/phpcs" ] && ./vendor/bin/phpcs --standard=PSR12 . || echo "⚠️ PHPCS skipped" >> logs/scan.log
+          [ -f "vendor/bin/psalm" ] && ./vendor/bin/psalm || echo "⚠️ Psalm skipped" >> logs/scan.log
+          flake8 . --max-line-length=120 || echo "⚠️ Python lint skipped" >> logs/scan.log
           echo "✅ Scan Completed"
 
       - name: 🧪 Run Tests
         run: |
           echo "🧪 Running Tests..."
-          npm test --if-present || echo "✅ No Node tests or passed"
-          [ -f "vendor/bin/phpunit" ] && ./vendor/bin/phpunit --verbose || echo "✅ No PHP tests or passed"
-          [ -f "tests/test.py" ] && python -m unittest discover -s tests || echo "✅ No Python tests or passed"
+          npm test --if-present || echo "✅ No Node tests or passed" >> logs/test.log
+          [ -f "vendor/bin/phpunit" ] && ./vendor/bin/phpunit --verbose || echo "✅ No PHP tests or passed" >> logs/test.log
+          [ -f "tests/test.py" ] && python -m unittest discover -s tests || echo "✅ No Python tests or passed" >> logs/test.log
 
       - name: 🤖 AI Auto-Fix & Refactor
         run: |
           echo "🤖 AI Auto-Fix Running..."
-          npx prettier --write . || echo "⚠️ Prettier skipped"
-          [ -f "vendor/bin/phpcbf" ] && ./vendor/bin/phpcbf --standard=PSR12 . || echo "⚠️ PHPCBF skipped"
-          black . || echo "⚠️ Black skipped"
+          npx prettier --write . || echo "⚠️ Prettier skipped" >> logs/fix.log
+          [ -f "vendor/bin/phpcbf" ] && ./vendor/bin/phpcbf --standard=PSR12 . || echo "⚠️ PHPCBF skipped" >> logs/fix.log
+          black . || echo "⚠️ Black skipped" >> logs/fix.log
           echo "AI Auto-Fix Completed at $(date)" > logs/ai-auto-fix-log.txt
           git add logs/ai-auto-fix-log.txt
 
@@ -146,20 +145,20 @@ jobs:
       - name: 📝 Generate HTML Page
         run: |
           echo "📝 Generating HTML index page..."
-          [ -f "generate_page.php" ] && php generate_page.php || echo "⚠️ generate_page.php not found"
+          [ -f "generate_page.php" ] && php generate_page.php || echo "⚠️ generate_page.php not found" >> logs/html.log
 
       - name: 🐍 Run Python Generator
         run: |
           echo "🐍 Running Python Generator..."
-          [ -f "main.py" ] && python main.py || echo "ℹ️ No Python generator found"
+          [ -f "main.py" ] && python main.py || echo "ℹ️ No Python generator found" >> logs/python.log
 
       - name: 📂 Prepare Artifacts
         run: |
           echo "📂 Preparing artifacts..."
           mkdir -p release/lite release/public_html
-          cp -r lite/* release/lite/ 2>/dev/null || echo "⚠️ Lite copy failed"
-          cp -r public_html/* release/public_html/ 2>/dev/null || echo "⚠️ Public_html copy failed"
-          cp -r *.txt release/ 2>/dev/null || echo "⚠️ Txt copy failed"
+          cp -r lite/* release/lite/ 2>/dev/null || echo "⚠️ Lite copy failed" >> logs/artifacts.log
+          cp -r public_html/* release/public_html/ 2>/dev/null || echo "⚠️ Public_html copy failed" >> logs/artifacts.log
+          cp -r *.txt release/ 2>/dev/null || echo "⚠️ Txt copy failed" >> logs/artifacts.log
           echo "✅ Artifacts ready"
 
       - name: 📤 Commit AI Changes
@@ -200,13 +199,17 @@ jobs:
             else
               echo "⚠️ Merge Failed, AI Resolving Conflicts..."
               git fetch origin main
-              git checkout god-immortal-ai-fix
+              git checkout god-incarnate-ai-fix
               git merge origin/main --no-ff || { git merge --abort; git merge origin/main --strategy-option=theirs; }
               git commit -am "🤖 AI Resolved Merge Conflicts Attempt #$i" || true
-              git push origin god-immortal-ai-fix || true
+              git push origin god-incarnate-ai-fix || true
               sleep 5
             fi
           done
+          if [ "$MERGED" != "true" ]; then
+            echo "❌ Auto-Merge Failed after 3 attempts. Manual merge required."
+            gh pr comment "${{ steps.cpr.outputs.pull-request-number }}" --body "⚠️ Auto-Merge failed. Please resolve conflicts manually."
+          fi
 
       - name: 🚀 Auto Release
         if: github.ref == 'refs/heads/main' && steps.cpr.outputs.pull-request-url != ''
@@ -236,7 +239,7 @@ jobs:
           echo "🕒 Rolling Back to Last Stable State..."
           git fetch --tags
           LATEST_TAG=$(git describe --tags --abbrev=0 || echo main)
-          git checkout $LATEST_TAG || echo "⚠️ Rollback failed"
+          git checkout $LATEST_TAG || { echo "⚠️ Rollback failed" >> logs/rollback.log; exit 1; }
           echo "✅ System Restored to $LATEST_TAG"
 
       - name: ♻️ Auto-Restart Workflow
