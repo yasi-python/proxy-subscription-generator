@@ -8,6 +8,7 @@ on:
   workflow_dispatch:
   schedule:
     - cron: "0 */2 * * *" 
+
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
@@ -199,10 +200,10 @@ jobs:
             else
               echo "⚠️ Merge Failed, AI Resolving Conflicts..."
               git fetch origin main
-              git checkout god-incarnate-ai-fix
+              git checkout god-immortal-ai-fix
               git merge origin/main --no-ff || { git merge --abort; git merge origin/main --strategy-option=theirs; }
               git commit -am "🤖 AI Resolved Merge Conflicts Attempt #$i" || true
-              git push origin god-incarnate-ai-fix || true
+              git push origin god-immortal-ai-fix
               sleep 5
             fi
           done
